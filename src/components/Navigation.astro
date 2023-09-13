@@ -1,0 +1,19 @@
+---
+import NavigationLink from './NavigationLink.astro';
+---
+
+<nav
+  class="container px-6 md:flex md:justify-between items-center py-2"
+>
+  <a class="inline-block py-3 text-xl font-bold" href="/">Logo Here</a
+  >
+  <ul
+    class="space-y-3 md:space-y-0 md:h-full md:flex md:gap-5 lg:gap-8 md:justify-end md:items-center"
+  >
+    <NavigationLink href="/parents">For Parents</NavigationLink>
+    <NavigationLink href="/volunteer">
+      Volunteer to Help
+    </NavigationLink>
+    <NavigationLink href="/register">Register</NavigationLink>
+  </ul>
+</nav>
