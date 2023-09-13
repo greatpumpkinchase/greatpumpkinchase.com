@@ -7,7 +7,7 @@ import Footer from '../Footer.astro';
 const { title } = Astro.props;
 ---
 
-<html lang="en">
+<html class="min-h-screen" lang="en">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -17,12 +17,14 @@ const { title } = Astro.props;
 
     {import.meta.env.PROD && <Analytics />}
   </head>
-  <body class="bg-beige">
+  <body class="min-h-screen flex flex-col bg-beige">
     <header>
       <Navigation />
     </header>
 
-    <slot />
+    <div class="flex-1">
+      <slot />
+    </div>
 
     <Footer />
   </body>
