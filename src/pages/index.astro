@@ -1,16 +1,14 @@
 ---
+import { Image } from 'astro:assets';
+import Base from '../components/layouts/Base.astro';
 
+import logo from '../assets/logo.png';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Base>
+  <section class="grid place-items-center h-screen">
+    <div class="max-w-5xl px-4 md:px-6">
+      <Image src={logo} alt="logo" />
+    </div>
+  </section>
+</Base>
