@@ -1,7 +1,7 @@
 ---
 const { href } = Astro.props;
 
-const active = href === Astro.url.pathname;
+const active = href === Astro.url.pathname.replace(/\/$/, '');
 ---
 
 <li>
