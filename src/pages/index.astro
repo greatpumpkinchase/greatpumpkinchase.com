@@ -6,13 +6,15 @@ import logo from '../assets/logo.png';
 ---
 
 <Base>
-  <section class="grid place-items-center h-screen">
-    <div class="max-w-5xl px-4 md:px-6">
-      <Image src={logo} alt="logo" />
+  <section class="grid place-items-center py-10 lg:min-h-screen">
+    <div class="container">
+      <Image class="object-contain" src={logo} alt="logo" />
     </div>
   </section>
-  <section>
-    <h2>
+  <section class="container py-10">
+    <h2
+      class="text-2xl sm:text-3xl md:text-4xl text-center leading-[1.6] sm:leading-[1.6] md:leading-[1.6]"
+    >
       Join us for a night of fun and adventure as we race around
       Charlottesville to solve clues, complete challenges, and find
       the Great Pumpkin!
