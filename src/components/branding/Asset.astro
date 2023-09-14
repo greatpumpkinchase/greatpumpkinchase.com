@@ -1,12 +1,17 @@
 ---
 import DownloadButton from './DownloadButton.astro';
 
-const { name, src, versions } = Astro.props;
+const { name, src, versions, background } = Astro.props;
 ---
 
 <div>
-  <h4 class="mb-3 text-xl font-bold">{name}</h4>
-  <div class="p-5 aspect-3/2 w-full bg-white rounded-lg shadow">
+  <h4 class="mb-3 text-lg font-bold font-mono uppercase">{name}</h4>
+  <div
+    class:list={[
+      'p-5 aspect-3/2 w-full rounded-lg shadow',
+      background ?? 'bg-white',
+    ]}
+  >
     <img src={src} alt={name + ' asset preview'} />
   </div>
   <div class="my-5 space-x-5">
