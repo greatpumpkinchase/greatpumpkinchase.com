@@ -1,0 +1,99 @@
+---
+import Asset from '../components/branding/Asset.astro';
+---
+
+<section class="container mx-auto px py-10">
+  <h2 class="text-3xl md:text-4xl font-bold text-center">Logos</h2>
+
+  <div
+    class="py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10"
+  >
+    <Asset
+      name="Regular"
+      src="https://static.greatpumpkinchase.com/presskit/logos/gpc-logo.png"
+      versions={[
+        {
+          name: 'PNG',
+          src: 'https://static.greatpumpkinchase.com/presskit/logos/gpc-logo.png',
+        },
+        {
+          name: 'SVG',
+          src: 'https://static.greatpumpkinchase.com/presskit/logos/gpc-logo.svg',
+        },
+      ]}
+    />
+    <Asset
+      name="Text Only"
+      src="https://static.greatpumpkinchase.com/presskit/logos/gpc-logo-text-only.png"
+      versions={[
+        {
+          name: 'PNG',
+          src: 'https://static.greatpumpkinchase.com/presskit/logos/gpc-logo-text-only.png',
+        },
+        {
+          name: 'SVG',
+          src: 'https://static.greatpumpkinchase.com/presskit/logos/gpc-logo-text-only.svg',
+        },
+      ]}
+    />
+    <Asset
+      name="Text Only without Year"
+      src="https://static.greatpumpkinchase.com/presskit/logos/gpc-logo-text-only-no-year.png"
+      versions={[
+        {
+          name: 'PNG',
+          src: 'https://static.greatpumpkinchase.com/presskit/logos/gpc-logo-text-only-no-year.png',
+        },
+        {
+          name: 'SVG',
+          src: 'https://static.greatpumpkinchase.com/presskit/logos/gpc-logo-text-only-no-year.svg',
+        },
+      ]}
+    />
+    <Asset
+      name="Regular for Dark Backgrounds"
+      background="bg-gray-900"
+      src="https://static.greatpumpkinchase.com/presskit/logos/gpc-logo-for-dark-background.png"
+      versions={[
+        {
+          name: 'PNG',
+          src: 'https://static.greatpumpkinchase.com/presskit/logos/gpc-logo-for-dark-background.png',
+        },
+        {
+          name: 'SVG',
+          src: 'https://static.greatpumpkinchase.com/presskit/logos/gpc-logo-for-dark-background.svg',
+        },
+      ]}
+    />
+    <Asset
+      name="Text Only for Dark Backgrounds"
+      background="bg-gray-900"
+      src="https://static.greatpumpkinchase.com/presskit/logos/gpc-logo-text-only-for-dark-background.png"
+      versions={[
+        {
+          name: 'PNG',
+          src: 'https://static.greatpumpkinchase.com/presskit/logos/gpc-logo-text-only-for-dark-background.png',
+        },
+        {
+          name: 'SVG',
+          src: 'https://static.greatpumpkinchase.com/presskit/logos/gpc-logo-text-only-for-dark-background.svg',
+        },
+      ]}
+    />
+    <Asset
+      name="Text Only without Year for Dark Backgrounds"
+      background="bg-gray-900"
+      src="https://static.greatpumpkinchase.com/presskit/logos/gpc-logo-text-only-no-year-for-dark-background.png"
+      versions={[
+        {
+          name: 'PNG',
+          src: 'https://static.greatpumpkinchase.com/presskit/logos/gpc-logo-text-only-no-year-for-dark-background.png',
+        },
+        {
+          name: 'SVG',
+          src: 'https://static.greatpumpkinchase.com/presskit/logos/gpc-logo-text-only-no-year-for-dark-background.svg',
+        },
+      ]}
+    />
+  </div>
+</section>
