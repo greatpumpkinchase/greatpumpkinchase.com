@@ -1,0 +1,31 @@
+---
+import ColorCategory from '../components/branding/ColorCategory.astro';
+import Color from '../components/branding/Color.astro';
+---
+
+<section class="container mx-auto px py-10">
+  <h2 class="mb-3 text-3xl md:text-4xl font-bold text-center">
+    Colors
+  </h2>
+
+  <div class="space-y-3">
+    <ColorCategory title="Gray">
+      <Color name="700" color="#404040" />
+      <Color name="600" color="#565656" />
+    </ColorCategory>
+
+    <ColorCategory title="Orange">
+      <Color name="400" color="#F27D0F" />
+    </ColorCategory>
+
+    <ColorCategory title="Yellow">
+      <Color name="400" color="#FFAB2D" />
+    </ColorCategory>
+
+    <ColorCategory title="Beige">
+      <Color name="150" color="#FDE3C4" darkText />
+      <Color name="100" color="#FFEDD6" darkText />
+      <Color name="50" color="#FFF4E6" darkText />
+    </ColorCategory>
+  </div>
+</section>
