@@ -5,22 +5,26 @@ import logo from '../assets/logo-text-only-without-year.svg';
 ---
 
 <nav
-  class="container px-6 md:flex md:justify-between items-center py-2"
+  class="container mx-auto px-lg md:flex md:justify-between items-center py-2"
 >
-  <a class="inline-block py-3 text-xl font-bold" href="/">
-    <Image
-      class="h-24 md:h-32 w-auto"
-      src={logo}
-      alt="Great Pumpkin Chase logo with text only"
-    />
-  </a>
-  <ul
-    class="space-y-3 md:space-y-0 md:h-full md:flex md:gap-5 lg:gap-8 md:justify-end md:items-center"
-  >
-    <NavigationLink href="/parents">For Parents</NavigationLink>
-    <NavigationLink href="/volunteer">
-      Volunteer to Help
-    </NavigationLink>
-    <NavigationLink href="/register">Register</NavigationLink>
-  </ul>
+  <div>
+    <a class="inline-block py-3 text-xl font-bold" href="/">
+      <Image
+        class="h-24 md:h-32 w-auto"
+        src={logo}
+        alt="Great Pumpkin Chase logo with text only"
+      />
+    </a>
+  </div>
+  <div>
+    <ul
+      class="md:mr-3 space-y-3 md:space-y-0 md:h-full md:flex md:gap-5 lg:gap-8 md:justify-end md:items-center"
+    >
+      <NavigationLink href="/parents">For Parents</NavigationLink>
+      <NavigationLink href="/volunteer">
+        Volunteer to Help
+      </NavigationLink>
+      <NavigationLink href="/register">Register</NavigationLink>
+    </ul>
+  </div>
 </nav>
