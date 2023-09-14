@@ -1,0 +1,12 @@
+---
+const { src } = Astro.props;
+---
+
+<a
+  class="px-10 py-2 bg-white rounded-md inline-block text-center shadow"
+  href={src}
+  download
+>
+  <div class="text-xs text-gray-700">Download</div>
+  <div class="text-lg"><slot /></div>
+</a>

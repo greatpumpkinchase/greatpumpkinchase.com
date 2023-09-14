@@ -1,0 +1,36 @@
+---
+import Base from '../components/layouts/Base.astro';
+import Asset from '../components/branding/Asset.astro';
+---
+
+<Base>
+  <section class="container mx-auto px py-10 text-center">
+    <h1 class="mb-3 text-4xl md:text-5xl font-bold">Press Kit</h1>
+    <p>
+      Here you can find logos, graphics, and other resources to
+      represent the Great Pumpkin Chase.
+    </p>
+  </section>
+  <section class="container mx-auto px py-10">
+    <h2 class="text-3xl md:text-4xl font-bold text-center">Logos</h2>
+
+    <div
+      class="py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8"
+    >
+      <Asset
+        name="Regular"
+        src="https://static.greatpumpkinchase.com/presskit/logos/gpc-logo.png"
+        versions={[
+          {
+            name: 'SVG',
+            src: 'https://static.greatpumpkinchase.com/presskit/logos/gpc-logo.svg',
+          },
+          {
+            name: 'PNG',
+            src: 'https://static.greatpumpkinchase.com/presskit/logos/gpc-logo.png',
+          },
+        ]}
+      />
+    </div>
+  </section>
+</Base>

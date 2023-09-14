@@ -1,0 +1,21 @@
+---
+import DownloadButton from './DownloadButton.astro';
+
+const { name, src, versions } = Astro.props;
+---
+
+<div>
+  <h4 class="mb-3 text-xl font-bold">{name}</h4>
+  <div class="p-5 aspect-3/2 w-full bg-white rounded-lg shadow">
+    <img src={src} alt={name + ' asset preview'} />
+  </div>
+  <div class="my-5 space-x-5">
+    {
+      versions.map((version) => (
+        <DownloadButton src={version.src}>
+          {version.name.toUpperCase()}
+        </DownloadButton>
+      ))
+    }
+  </div>
+</div>

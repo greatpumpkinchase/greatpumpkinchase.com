@@ -6,6 +6,9 @@ module.exports = {
             colors: {
                 'beige': '#FFF4E6',
             },
+            aspectRatio: {
+                '3/2': '3 / 2',
+            },
         },
     },
     plugins: [
