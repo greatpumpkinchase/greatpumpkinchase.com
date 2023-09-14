@@ -14,7 +14,7 @@ const { name, src, versions, background } = Astro.props;
   >
     <img src={src} alt={name + ' asset preview'} />
   </div>
-  <div class="my-5 space-x-5">
+  <div class="my-5 flex gap-5">
     {
       versions.map((version) => (
         <DownloadButton src={version.src}>
