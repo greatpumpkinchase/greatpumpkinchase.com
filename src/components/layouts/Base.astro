@@ -15,6 +15,8 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
 
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
     {import.meta.env.PROD && <Analytics />}
   </head>
   <body class="min-h-screen flex flex-col flex-nowrap bg-beige">
