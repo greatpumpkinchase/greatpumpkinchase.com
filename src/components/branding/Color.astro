@@ -1,11 +1,16 @@
 ---
-const { name, color, darkText } = Astro.props;
+const { name, color, description, darkText } = Astro.props;
 ---
 
 <div>
-  <h4 class="mb-3 text-lg font-bold font-mono uppercase flex-auto">
+  <h4 class="mb-2 text-lg font-bold font-mono uppercase flex-auto">
     {name}
   </h4>
+  {
+    description && (
+      <p class="mb-4 font-mono text-gray-800">{description}</p>
+    )
+  }
   <div
     class="p-5 aspect-3/2 w-full rounded-lg shadow grid place-items-center"
     style={`background-color: ${color};`}
