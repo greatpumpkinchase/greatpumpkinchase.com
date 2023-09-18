@@ -1,5 +1,8 @@
 ---
 import Base from '../components/layouts/Base.astro';
+import CanonicalUrl from '../components/utilities/CanonicalUrl.astro';
 ---
 
-<Base title="Safety Info" />
+<Base title="Safety Info">
+  <CanonicalUrl slot="head" page="safety" />
+</Base>

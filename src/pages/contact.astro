@@ -1,45 +1,48 @@
 ---
 import Base from '../components/layouts/Base.astro';
+import CanonicalUrl from '../components/utilities/CanonicalUrl.astro';
 ---
 
 <Base title="Contact Us">
-  <section class="container mx-auto px space-y-5 py-10">
-    <h1 class="text-4xl">Got some questions?</h1>
-    <form class="max-w-4xl" action="" method="POST">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-5">
-        <div class="flex flex-col">
-          <label for="name">Name</label>
-          <input
-            class="rounded-md border border-gray-400 shadow-md"
-            type="text"
-            name="name"
-            id="name"
-          />
+  <CanonicalUrl slot="head" page="contact">
+    <section class="container mx-auto px space-y-5 py-10">
+      <h1 class="text-4xl">Got some questions?</h1>
+      <form class="max-w-4xl" action="" method="POST">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-5">
+          <div class="flex flex-col">
+            <label for="name">Name</label>
+            <input
+              class="rounded-md border border-gray-400 shadow-md"
+              type="text"
+              name="name"
+              id="name"
+            />
+          </div>
+          <div class="flex flex-col">
+            <label for="email">Email</label>
+            <input
+              class="rounded-md border border-gray-400 shadow-md"
+              type="email"
+              name="email"
+              id="email"
+            />
+          </div>
+          <div class="flex flex-col md:col-span-2">
+            <label for="message">Message</label>
+            <textarea
+              class="rounded-md border-1 border-gray-400 shadow-md"
+              name="message"
+              id="message"
+              cols="30"
+              rows="10"></textarea>
+          </div>
         </div>
-        <div class="flex flex-col">
-          <label for="email">Email</label>
-          <input
-            class="rounded-md border border-gray-400 shadow-md"
-            type="email"
-            name="email"
-            id="email"
-          />
-        </div>
-        <div class="flex flex-col md:col-span-2">
-          <label for="message">Message</label>
-          <textarea
-            class="rounded-md border-1 border-gray-400 shadow-md"
-            name="message"
-            id="message"
-            cols="30"
-            rows="10"></textarea>
-        </div>
-      </div>
 
-      <button
-        class="mt-5 bg-white text-lg px-5 py-3 rounded-md border border-gray-400 shadow-md"
-        type="submit">Send</button
-      >
-    </form>
-  </section>
+        <button
+          class="mt-5 bg-white text-lg px-5 py-3 rounded-md border border-gray-400 shadow-md"
+          type="submit">Send</button
+        >
+      </form>
+    </section>
+  </CanonicalUrl>
 </Base>

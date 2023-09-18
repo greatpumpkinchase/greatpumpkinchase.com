@@ -3,9 +3,11 @@ import { Image } from 'astro:assets';
 import Base from '../components/layouts/Base.astro';
 
 import logo from '../assets/gpc-logo.svg';
+import CanonicalUrl from '../components/utilities/CanonicalUrl.astro';
 ---
 
 <Base title="The Great Pumpkin Chase">
+  <CanonicalUrl slot="head" page="" />
   <section class="grid place-items-center py-10">
     <div class="container">
       <Image

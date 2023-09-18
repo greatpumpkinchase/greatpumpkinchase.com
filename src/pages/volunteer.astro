@@ -1,5 +1,8 @@
 ---
 import Base from '../components/layouts/Base.astro';
+import CanonicalUrl from '../components/utilities/CanonicalUrl.astro';
 ---
 
-<Base title="Volunteer to Help" />
+<Base title="Volunteer to Help">
+  <CanonicalUrl slot="head" page="volunteer" />
+</Base>

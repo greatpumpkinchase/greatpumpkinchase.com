@@ -1,5 +1,8 @@
 ---
 import Base from '../components/layouts/Base.astro';
+import CanonicalUrl from '../components/utilities/CanonicalUrl.astro';
 ---
 
-<Base title="Register to Participate" />
+<Base title="Register to Participate">
+  <CanonicalUrl slot="head" page="register" />
+</Base>

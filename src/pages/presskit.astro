@@ -2,9 +2,11 @@
 import Base from '../components/layouts/Base.astro';
 import Logos from '../partials/Logos.astro';
 import Colors from '../partials/Colors.astro';
+import CanonicalUrl from '../components/utilities/CanonicalUrl.astro';
 ---
 
 <Base title="Press Kit">
+  <CanonicalUrl slot="head" page="presskit" />
   <section class="container mx-auto px py-10 text-center">
     <h1 class="mb-3 text-4xl md:text-5xl font-bold">Press Kit</h1>
     <p>

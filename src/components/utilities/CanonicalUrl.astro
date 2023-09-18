@@ -1,0 +1,7 @@
+---
+const { href, page } = Astro.props;
+
+const computedHref = href || Astro.site + page;
+---
+
+<link rel="canonical" href={computedHref} />
