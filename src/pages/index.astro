@@ -2,28 +2,42 @@
 import { Image } from 'astro:assets';
 import Base from '../components/layouts/Base.astro';
 
-import logo from '../assets/gpc-logo.svg';
 import CanonicalUrl from '../components/utilities/CanonicalUrl.astro';
 ---
 
 <Base title="The Great Pumpkin Chase">
   <CanonicalUrl slot="head" page="" />
-  <section class="grid place-items-center py-10">
+  <section class="grid place-items-center py-14">
     <div class="container">
-      <Image
-        class="object-contain md:w-3/5 lg:w-1/2 mx-auto"
-        src={logo}
-        alt="logo"
-      />
+      <h2
+        class="text-2xl text-center leading-[1.6] sm:leading-[1.6] md:leading-[1.6]"
+      >
+        <div class="text-5xl font-bold mb-3">
+          You and your friends are invited!
+        </div>
+         Come for an adventure to find clues throughout
+        Charlottesville and solve the mystery of the Great Pumpkin.
+      </h2>
     </div>
   </section>
-  <section class="container mx-auto py-10 px-lg">
-    <h2
-      class="text-2xl sm:text-3xl md:text-4xl text-center leading-[1.6] sm:leading-[1.6] md:leading-[1.6]"
+  <section class="container mx-auto py-10">
+    <div
+      class="p-5 border-4 border-gray-500 border-dashed max-w-xl mx-auto"
     >
-      Join us for a night of fun and adventure as we race around
-      Charlottesville to solve clues, complete challenges, and find
-      the Great Pumpkin!
-    </h2>
+      <h3 class="text-2xl font-bold text-center mb-3">Itinerary</h3>
+      <li class="text-lg">
+        <strong>6:00pm</strong>: Arrive for Dinner and Fellowship
+      </li>
+      <li class="text-lg">
+        <strong>6:30pm</strong>: The Hunt begins
+      </li>
+      <li class="text-lg">
+        <strong>8:45pm</strong>: The Hunt concludes and more snacks
+      </li>
+      <li class="text-lg">
+        <strong>9:00pm</strong>: Message from Jason Turlington and
+        Prizes
+      </li>
+    </div>
   </section>
 </Base>
