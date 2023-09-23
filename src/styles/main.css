@@ -9,4 +9,8 @@
   .px-lg {
     @apply px-6 md:px-8 lg:px-10;
   }
+
+  .link {
+    @apply border-b-2 border-orange-200 hover:border-orange-300;
+  }
 }
