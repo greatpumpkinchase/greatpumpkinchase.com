@@ -1,4 +1,5 @@
 ---
+import DashedBox from '../components/DashedBox.astro';
 import Team from '../components/Team.astro';
 import Base from '../components/layouts/Base.astro';
 import CanonicalUrl from '../components/utilities/CanonicalUrl.astro';
@@ -51,13 +52,13 @@ import CanonicalUrl from '../components/utilities/CanonicalUrl.astro';
     </ul>
   </section>
   <section class="container mx-auto py-10 px">
-    <p
-      class="text-lg text-center border-4 border-gray-500 border-dashed p-5 max-w-prose mx-auto"
-    >
-      Interested in volunteering, but need more information? <br
-      />Reach out by the <a href="/contact" class="link"
-        >contact form</a
-      >!
-    </p>
+    <DashedBox>
+      <p class="text-lg text-center">
+        Interested in volunteering, but need more information? <br
+        />Reach out by the <a href="/contact" class="link"
+          >contact form</a
+        >!
+      </p>
+    </DashedBox>
   </section>
 </Base>

@@ -3,6 +3,7 @@ import { Image } from 'astro:assets';
 import Base from '../components/layouts/Base.astro';
 
 import CanonicalUrl from '../components/utilities/CanonicalUrl.astro';
+import DashedBox from '../components/DashedBox.astro';
 ---
 
 <Base title="The Great Pumpkin Chase">
@@ -21,9 +22,7 @@ import CanonicalUrl from '../components/utilities/CanonicalUrl.astro';
     </div>
   </section>
   <section class="container mx-auto py-10 px">
-    <div
-      class="p-5 border-4 border-gray-500 border-dashed max-w-xl mx-auto"
-    >
+    <DashedBox>
       <h3 class="text-2xl font-bold text-center mb-3">Itinerary</h3>
       <ol>
         <li class="text-lg">
@@ -40,6 +39,6 @@ import CanonicalUrl from '../components/utilities/CanonicalUrl.astro';
           Prizes
         </li>
       </ol>
-    </div>
+    </DashedBox>
   </section>
 </Base>
