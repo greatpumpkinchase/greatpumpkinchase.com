@@ -8,7 +8,9 @@ const { name, color, description, darkText } = Astro.props;
   </h4>
   {
     description && (
-      <p class="mb-4 font-mono text-gray-800">{description}</p>
+      <p class="mb-4 font-mono text-gray-800 dark:text-gray-50">
+        {description}
+      </p>
     )
   }
   <div
