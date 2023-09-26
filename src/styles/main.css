@@ -11,6 +11,6 @@
   }
 
   .link {
-    @apply border-b-2 border-orange-200 hover:border-orange-300;
+    @apply underline font-semibold;
   }
 }
