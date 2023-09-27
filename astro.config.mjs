@@ -10,5 +10,15 @@ export default defineConfig({
         config: {
             applyBaseStyles: false
         }
-    }), sitemap()]
+    }), sitemap()],
+    redirects: {
+        '/register': {
+            status: 302,
+            destination: 'https://greatpumpkinchase.ticketbud.com/gpc'
+        },
+        '/volunteer/register': {
+            status: 302,
+            destination: 'https://docs.google.com/spreadsheets/d/1nCgrv27HLnYFlpsd1Qx9ZD0LcB86OyztRiAsmxept9w'
+        }
+    }
 });
