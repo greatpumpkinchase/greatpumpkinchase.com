@@ -1,0 +1,13 @@
+[build]
+command = "npm run build"
+publish = "dist"
+
+[[redirects]]
+status = 302
+from = "/register"
+to = "https://greatpumpkinchase.ticketbud.com/gpc"
+
+[[redirects]]
+from = "/volunteer/register"
+to = "https://docs.google.com/spreadsheets/d/1nCgrv27HLnYFlpsd1Qx9ZD0LcB86OyztRiAsmxept9w"
+status = 302

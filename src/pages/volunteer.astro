@@ -1,0 +1,84 @@
+---
+import DashedBox from '../components/DashedBox.astro';
+import Team from '../components/Team.astro';
+import Base from '../components/layouts/Base.astro';
+import CanonicalUrl from '../components/utilities/CanonicalUrl.astro';
+---
+
+<Base title="Volunteer to Help">
+  <CanonicalUrl slot="head" page="volunteer" />
+
+  <section class="container mx-auto py-14 px">
+    <h1 class="mb-3 text-4xl font-bold text-center">
+      Volunteer to Help
+    </h1>
+    <p class="max-w-prose mx-auto text-center">
+      The GPC Volunteer Team is dedicated to ensuring the safety and
+      well-being of each student involved! Whether a driver, clue
+      sentinel, or snack leader YOU are key to making the fun and
+      mystery of the Great Pumpkin Chase!
+    </p>
+  </section>
+  <section class="container mx-auto py-10 px">
+    <h2 class="mb-10 text-3xl font-bold text-center">
+      Areas to Serve
+    </h2>
+    <ul class="space-y-8 max-w-prose mx-auto">
+      <Team title="Prayer Team">
+        Help us by praying for blessings of safety and joy during the
+        event and that students would leave hearts changed by the good
+        news of Jesus Christ. Interested in praying with a group or
+        getting more information to share? Fill out the Contact Form.
+      </Team>
+      <Team title="Refreshments and Decor Team">
+        This team is in charge of food and drinks, and is on the front
+        lines of creating a welcoming atmosphere to all who attend!
+      </Team>
+      <Team title="Driver Team">
+        Chaperone a team as they solve riddles and earn points on this
+        adventure around Charlottesville! Vehicle and age requirements
+        apply.
+      </Team>
+      <Team title="Waypoint Sentinel">
+        Help run the game by managing clues and documenting
+        accomplished challenges at a mystery location for the students
+        navigating their way to the Great Pumpkin!
+      </Team>
+      <Team title="Setup Crew">
+        The magic is in the prep! Arrive a few hours early to help
+        with decor, food set-up, and the miscellaneous pieces needed
+        to bring about the fun and ease of the event!
+      </Team>
+      <Team title="Clean-up Crew">
+        Stay to pitch in and pick up after the fun of the evening!
+      </Team>
+      <Team title="Scoring Team">
+        This Pumpkin Chase will require diligent score keeping, be
+        part of the prize giving madness by helping sort through
+        acquired points and penalties for each team!
+      </Team>
+      <Team title="Clue Call Center">
+        Willing to give a few hints to some brave adventurers? Commit
+        to being available by phone during the event to help teams
+        find their next destination!
+      </Team>
+    </ul>
+  </section>
+  <section class="container mx-auto py-10 px">
+    <DashedBox>
+      <p class="text-lg text-center">
+        Interested in volunteering, but need more information? <br
+        />Reach out by the <a href="/contact" class="link"
+          >contact form</a
+        >!
+      </p>
+    </DashedBox>
+    <div class="flex justify-center mt-10">
+      <a
+        href="/volunteer/register"
+        class="rounded-md bg-orange-600 px-6 py-3 text-xl font-semibold text-white shadow-sm hover:bg-orange-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600"
+        >Sign Up</a
+      >
+    </div>
+  </section>
+</Base>

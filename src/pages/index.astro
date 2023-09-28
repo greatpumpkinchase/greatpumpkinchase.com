@@ -2,26 +2,66 @@
 import { Image } from 'astro:assets';
 import Base from '../components/layouts/Base.astro';
 
-import logo from '../assets/logo.png';
+import CanonicalUrl from '../components/utilities/CanonicalUrl.astro';
+import DashedBox from '../components/DashedBox.astro';
 ---
 
-<Base>
-  <section class="grid place-items-center py-10 lg:min-h-screen">
+<Base title="The Great Pumpkin Chase">
+  <CanonicalUrl slot="head" page="" />
+  <section class="grid place-items-center py-14 px">
     <div class="container">
-      <Image
-        class="object-contain md:w-4/5 mx-auto"
-        src={logo}
-        alt="logo"
-      />
+      <h1
+        class="text-2xl text-center leading-[1.6] sm:leading-[1.6] md:leading-[1.6]"
+      >
+        <div class="text-5xl font-bold mb-3">
+          You and your friends are invited!
+        </div>
+         Come for an adventure to find clues throughout
+        Charlottesville and solve the mystery of the Great Pumpkin.
+      </h1>
     </div>
   </section>
-  <section class="container py-10">
-    <h2
-      class="text-2xl sm:text-3xl md:text-4xl text-center leading-[1.6] sm:leading-[1.6] md:leading-[1.6]"
-    >
-      Join us for a night of fun and adventure as we race around
-      Charlottesville to solve clues, complete challenges, and find
-      the Great Pumpkin!
-    </h2>
+  <section class="container mx-auto py-10 px">
+    <DashedBox title="Itinerary">
+      <ol>
+        <li class="text-lg">
+          <strong>6:00pm</strong>: Arrive for Pizza and Fellowship
+        </li>
+        <li class="text-lg">
+          <strong>6:30pm</strong>: The Hunt begins
+        </li>
+        <li class="text-lg">
+          <strong>8:45pm</strong>: The Hunt concludes and more snacks
+        </li>
+        <li class="text-lg">
+          <strong>9:00pm</strong>: Message from Jason Turlington and
+          Prizes
+        </li>
+      </ol>
+    </DashedBox>
+  </section>
+  <section
+    class="container mx-auto py-14 px space-y-3 text-center max-w-5xl"
+  >
+    <h3 class="text-3xl font-bold">
+      What is the Great Pumpkin Chase?
+    </h3>
+    <p>
+      The GPC 2023 is a city-wide scavenger hunt for any youth,
+      6th-12th grade. The event begins at 6pm sharp on the evening of
+      Friday, October 27, 2023 at CrossLife Community Church (1410 Old
+      Brook Rd, at Rio Road), and will end by about 11pm. If there's
+      inclement weather on Friday night, we will postpone until the
+      next night, on Saturday the 28th.
+    </p>
+
+    <p>
+      Teams of participants, consisting of 6-12 people with 1-2 adult
+      drivers/chaperones, will make their way throughout the evening
+      to different waypoints throughout Charlottesville, each of which
+      are well-known, safe public places. At each waypoint teams will
+      have to work together to solve puzzles, complete challenges, and
+      earn points by collecting artifacts along the way.
+    </p>
   </section>
 </Base>

@@ -1,0 +1,26 @@
+---
+import Base from '../components/layouts/Base.astro';
+import CanonicalUrl from '../components/utilities/CanonicalUrl.astro';
+import ContactForm from '../partials/ContactForm.astro';
+---
+
+<Base title="Contact Us">
+  <CanonicalUrl slot="head" page="contact" />
+  <section class="container mx-auto px space-y-5 py-10">
+    <h1 class="text-4xl text-center">Contact Us</h1>
+    <div class="max-w-4xl mx-auto">
+      <ContactForm />
+    </div>
+  </section>
+  <section class="container mx-auto px py-10 mt-10">
+    <div class="grid place-content-center">
+      <a
+        href="tel:7196604878"
+        class="inline-block py-3 px-12 text-center text-white bg-red-600 rounded-lg shadow"
+      >
+        <h3 class="text-xl mb-2">Emergency Contact</h3>
+        <p class="text-4xl">(719) 660-4878</p>
+      </a>
+    </div>
+  </section>
+</Base>
