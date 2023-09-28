@@ -2,12 +2,17 @@
 const { name, color, description } = Astro.props;
 ---
 
-<div>
+<div x-data="{}" data-color={color}>
   <div class="mb-3">
     <h4 class="text-lg font-bold font-mono uppercase flex-auto">
       {name}
     </h4>
-    <p class="text-gray-500">{color}</p>
+    <button
+      class="text-gray-500"
+      @click="navigator.clipboard.writeText($root.dataset.color)"
+    >
+      {color}
+    </button>
   </div>
   <div
     class="aspect-3/2 w-24 rounded-lg shadow"
