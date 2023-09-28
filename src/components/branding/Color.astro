@@ -1,8 +1,10 @@
 ---
+import Clipboard from 'astro-heroicons/outline/clipboard.astro';
+
 const { name, color, description } = Astro.props;
 ---
 
-<div x-data="{copied: false}" data-color={color}>
+<div x-data="{copied: false, hover: false}" data-color={color}>
   <div class="mb-3">
     <h4 class="text-lg font-bold font-mono uppercase flex-auto">
       {name}
@@ -10,11 +12,17 @@ const { name, color, description } = Astro.props;
     <div class="h-5 text-gray-500 relative">
       <div class="absolute inset-0">
         <button
+          @mouseover="hover = true"
+          @mouseover.away="hover = false"
+          class="flex gap-2 items-center"
           x-show="!copied"
           x-transition
-          @click="navigator.clipboard.writeText($root.dataset.color); copied = true; setTimeout(() => copied = false, 1000)"
+          @click="navigator.clipboard.writeText($root.dataset.color); copied = true; hover = false; setTimeout(() => copied = false, 1000)"
         >
           {color}
+          <div x-show="hover" x-transition x-cloak>
+            <Clipboard class="w-5 h-5 text-gray-300" />
+          </div>
         </button>
       </div>
       <div
