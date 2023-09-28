@@ -3,7 +3,7 @@ import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
 import alpinejs from "@astrojs/alpinejs";
 
-import netlify from "@astrojs/netlify/functions";
+import netlify from "@astrojs/netlify/static";
 
 // https://astro.build/config
 export default defineConfig({
