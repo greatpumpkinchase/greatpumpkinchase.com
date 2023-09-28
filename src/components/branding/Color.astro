@@ -1,26 +1,17 @@
 ---
-const { name, color, description, darkText } = Astro.props;
+const { name, color, description } = Astro.props;
 ---
 
-<div>
-  <h4 class="mb-2 text-lg font-bold font-mono uppercase flex-auto">
-    {name}
-  </h4>
+<div class="">
+  <div class="mb-3">
+    <h4 class="text-lg font-bold font-mono uppercase flex-auto">
+      {name}
+    </h4>
+    <p class="text-gray-500">{color}</p>
+  </div>
   <div
-    class="p-5 aspect-3/2 w-full rounded-lg shadow grid place-items-center"
+    class="aspect-3/2 w-24 rounded-lg shadow"
     style={`background-color: ${color};`}
   >
-    <div
-      class:list={['text-3xl font-mono', { 'text-white': !darkText }]}
-    >
-      {color}
-    </div>
   </div>
-  {
-    description && (
-      <p class="mt-4 text-sm font-mono text-gray-800 dark:text-gray-50">
-        {description}
-      </p>
-    )
-  }
 </div>
