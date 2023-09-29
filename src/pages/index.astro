@@ -12,16 +12,18 @@ import DashedBox from '../components/DashedBox.astro';
   <CanonicalUrl slot="head" page="" />
   <section class="grid place-items-center py-14 px">
     <div class="container">
-      <Image
-        src={Logo}
-        alt="The Great Pumpkin Chase"
-        class="mx-auto max-w-xl mb-24 block dark:hidden"
-      />
-      <Image
-        src={LogoForDarkBackground}
-        alt="The Great Pumpkin Chase"
-        class="mx-auto max-w-xl mb-24 hidden dark:block"
-      />
+      <div class="mx-auto max-w-xl mb-24">
+        <Image
+          src={Logo}
+          alt="The Great Pumpkin Chase"
+          class="block dark:hidden"
+        />
+        <Image
+          src={LogoForDarkBackground}
+          alt="The Great Pumpkin Chase"
+          class="hidden dark:block"
+        />
+      </div>
       <h1
         class="text-2xl text-center leading-[1.6] sm:leading-[1.6] md:leading-[1.6]"
       >
