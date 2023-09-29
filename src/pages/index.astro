@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import Base from '../components/layouts/Base.astro';
+import Logo from '../assets/gpc-logo.svg';
 
 import CanonicalUrl from '../components/utilities/CanonicalUrl.astro';
 import DashedBox from '../components/DashedBox.astro';
@@ -10,6 +11,11 @@ import DashedBox from '../components/DashedBox.astro';
   <CanonicalUrl slot="head" page="" />
   <section class="grid place-items-center py-14 px">
     <div class="container">
+      <Image
+        src={Logo}
+        alt="The Great Pumpkin Chase"
+        class="mx-auto max-w-xl mb-24"
+      />
       <h1
         class="text-2xl text-center leading-[1.6] sm:leading-[1.6] md:leading-[1.6]"
       >
