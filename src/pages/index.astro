@@ -35,26 +35,40 @@ import DashedBox from '../components/DashedBox.astro';
       </h1>
     </div>
   </section>
+  <section class="container mx-auto py-14 px text-center max-w-5xl">
+    <h3 class="text-3xl font-bold mb-5">
+      What is the Great Pumpkin Chase?
+    </h3>
+    <div class="space-y-3">
+      <p>
+        The GPC 2023 is a city-wide scavenger hunt for any youth,
+        6th-12th grade. The event <strong>begins at 6pm sharp</strong>
+         on the evening of
+        <strong
+          >Friday, October 27, 2023 at CrossLife Community Church
+          (1410 Old Brook Rd, at Rio Road)</strong
+        >, and will end by about 11pm. If there's inclement weather on
+        Friday night, we will postpone until the next night, on
+        <strong>Saturday the 28th</strong>.
+      </p>
+      <p>
+        Teams of participants, consisting of 6-12 people with 1-2
+        adult drivers/chaperones, will make their way throughout the
+        evening to different waypoints throughout Charlottesville,
+        each of which are well-known, safe public places. At each
+        waypoint teams will have to work together to solve puzzles,
+        complete challenges, and earn points by collecting artifacts
+        along the way.
+      </p>
+    </div>
+
+    <div class="mt-10">
+      <a class="btn" href="/register">Students Register Here!</a>
+    </div>
+  </section>
   <section
     class="container mx-auto py-10 px grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-7xl"
   >
-    <DashedBox title="Itinerary">
-      <ol>
-        <li class="text-lg">
-          <strong>6:00pm</strong>: Arrive for Pizza and Fellowship
-        </li>
-        <li class="text-lg">
-          <strong>6:30pm</strong>: The Hunt begins
-        </li>
-        <li class="text-lg">
-          <strong>8:45pm</strong>: The Hunt concludes and more snacks
-        </li>
-        <li class="text-lg">
-          <strong>9:00pm</strong>: Message from Jason Turlington and
-          Prizes
-        </li>
-      </ol>
-    </DashedBox>
     <DashedBox title="Details">
       <ol class="text-xl">
         <li><strong>Date</strong>: October 27th</li>
@@ -71,29 +85,23 @@ import DashedBox from '../components/DashedBox.astro';
         </li>
       </ol>
     </DashedBox>
-  </section>
-  <section
-    class="container mx-auto py-14 px space-y-3 text-center max-w-5xl"
-  >
-    <h3 class="text-3xl font-bold">
-      What is the Great Pumpkin Chase?
-    </h3>
-    <p>
-      The GPC 2023 is a city-wide scavenger hunt for any youth,
-      6th-12th grade. The event begins at 6pm sharp on the evening of
-      Friday, October 27, 2023 at CrossLife Community Church (1410 Old
-      Brook Rd, at Rio Road), and will end by about 11pm. If there's
-      inclement weather on Friday night, we will postpone until the
-      next night, on Saturday the 28th.
-    </p>
-
-    <p>
-      Teams of participants, consisting of 6-12 people with 1-2 adult
-      drivers/chaperones, will make their way throughout the evening
-      to different waypoints throughout Charlottesville, each of which
-      are well-known, safe public places. At each waypoint teams will
-      have to work together to solve puzzles, complete challenges, and
-      earn points by collecting artifacts along the way.
-    </p>
+    <DashedBox title="Itinerary">
+      <ol>
+        <li class="text-lg">
+          <strong>6:00pm</strong>: Arrive for Pizza and Fellowship
+        </li>
+        <li class="text-lg">
+          <strong>6:30pm</strong>: The Hunt begins
+        </li>
+        <li class="text-lg">
+          <strong>8:45pm</strong>: The Hunt concludes… all teams meet
+          back at CrossLife
+        </li>
+        <li class="text-lg">
+          <strong>9:00pm</strong>: Message from Jason Turlington and
+          Prizes
+        </li>
+      </ol>
+    </DashedBox>
   </section>
 </Base>
