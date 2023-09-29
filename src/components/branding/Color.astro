@@ -7,7 +7,7 @@ const { name, color, description } = Astro.props;
     <h4 class="text-lg font-bold font-mono uppercase flex-auto">
       {name}
     </h4>
-    <div class="h-5 text-gray-500 relative">
+    <div class="h-5 text-gray-500 dark:text-gray-100 relative">
       <div class="absolute inset-0">
         <button
           @mouseover="hover = true"

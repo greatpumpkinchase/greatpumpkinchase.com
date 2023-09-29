@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 import Base from '../components/layouts/Base.astro';
 import Logo from '../assets/gpc-logo.svg';
+import LogoForDarkBackground from '../assets/gpc-logo-for-dark-background.svg';
 
 import CanonicalUrl from '../components/utilities/CanonicalUrl.astro';
 import DashedBox from '../components/DashedBox.astro';
@@ -14,7 +15,12 @@ import DashedBox from '../components/DashedBox.astro';
       <Image
         src={Logo}
         alt="The Great Pumpkin Chase"
-        class="mx-auto max-w-xl mb-24"
+        class="mx-auto max-w-xl mb-24 block dark:hidden"
+      />
+      <Image
+        src={LogoForDarkBackground}
+        alt="The Great Pumpkin Chase"
+        class="mx-auto max-w-xl mb-24 hidden dark:block"
       />
       <h1
         class="text-2xl text-center leading-[1.6] sm:leading-[1.6] md:leading-[1.6]"
