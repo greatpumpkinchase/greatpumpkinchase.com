@@ -21,7 +21,9 @@ import DashedBox from '../components/DashedBox.astro';
       </h1>
     </div>
   </section>
-  <section class="container mx-auto py-10 px">
+  <section
+    class="container mx-auto py-10 px grid grid-cols-1 md:grid-cols-2 gap-10 max-w-7xl"
+  >
     <DashedBox title="Itinerary">
       <ol>
         <li class="text-lg">
@@ -36,6 +38,22 @@ import DashedBox from '../components/DashedBox.astro';
         <li class="text-lg">
           <strong>9:00pm</strong>: Message from Jason Turlington and
           Prizes
+        </li>
+      </ol>
+    </DashedBox>
+    <DashedBox title="Details">
+      <ol class="text-xl">
+        <li><strong>Date</strong>: October 27th</li>
+        <li>
+          <div class="flex">
+            <div class="mr-1"><strong>Location</strong>:</div>
+            <div>
+              <p>CrossLife Community Church</p>
+              <p>
+                1410 Old Brook Rd <br />Charlottesville, VA 22901
+              </p>
+            </div>
+          </div>
         </li>
       </ol>
     </DashedBox>
