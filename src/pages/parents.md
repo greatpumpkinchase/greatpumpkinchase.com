@@ -10,9 +10,11 @@ Our goal is to create a safe environment where your student can hear the message
 
 The GPC 2023 is a city-wide scavenger hunt for any youth, 6th- 12th grade.  The event **begins at 6pm sharp** on the evening of **Friday, October 27, 2023 at CrossLife Community Church (1410 Old Brook Rd, at Rio Road)**, and will end by about **11pm**.  If there’s inclement weather on Friday night, we will postpone until the next night, on **Saturday the 28th**.
 
-Teams of participants, consisting of 6-12 people with 1-2 adult drivers/chaperones, will make their way throughout the evening to different waypoints throughout Charlottesville, each of which are well-known, safe public places. At each waypoint teams will have to work together to solve puzzles, complete challenges, and earn points by collecting artifacts along the way. Directly after the chase, by about 9pm, all teams will regroup at Crosslife Community Church, where Youth Leader, Jason Turlington, will share a message from the bible.  The evening will wrap up with snacks, music, funny videos of the teams doing their challenges, and epic prizes for the teams who score the most points.
+Teams of participants, consisting of 6-12 people with 1-2 adult drivers/chaperones, will make their way throughout the evening to different waypoints throughout Charlottesville, each of which are well-known, safe public places. At each waypoint teams will have to work together to solve puzzles, complete challenges, and earn points by collecting artifacts along the way.
 
-Students may register on the [registration page](/register).  Note that the completed registration form and waiver are required.  We are also enlisting the help of adult volunteers!  If you’re interested in being a part of this event, let us know by signing up here.
+Directly after the Chase, by about 9pm, all teams will regroup at Crosslife Community Church, where Youth Leader, Jason Turlington, will share a message from the bible. The evening will wrap up with snacks, music, funny videos of the teams doing their challenges, and epic prizes for the teams who score the most points.
+
+Students may register on the [registration page](/register).  Note that the completed registration form and waiver are required.  We are also enlisting the help of adult volunteers!  If you’re interested in being a part of this event, let us know by [signing up here](/volunteer).
 
 ## Additional Information
 
