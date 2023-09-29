@@ -36,43 +36,6 @@ import DashedBox from '../components/DashedBox.astro';
     </div>
   </section>
   <section
-    class="container mx-auto py-10 px grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-7xl"
-  >
-    <DashedBox title="Itinerary">
-      <ol>
-        <li class="text-lg">
-          <strong>6:00pm</strong>: Arrive for Pizza and Fellowship
-        </li>
-        <li class="text-lg">
-          <strong>6:30pm</strong>: The Hunt begins
-        </li>
-        <li class="text-lg">
-          <strong>8:45pm</strong>: The Hunt concludes and more snacks
-        </li>
-        <li class="text-lg">
-          <strong>9:00pm</strong>: Message from Jason Turlington and
-          Prizes
-        </li>
-      </ol>
-    </DashedBox>
-    <DashedBox title="Details">
-      <ol class="text-xl">
-        <li><strong>Date</strong>: October 27th</li>
-        <li>
-          <div class="flex">
-            <div class="mr-1"><strong>Location</strong>:</div>
-            <div>
-              <p>CrossLife Community Church</p>
-              <p>
-                1410 Old Brook Rd <br />Charlottesville, VA 22901
-              </p>
-            </div>
-          </div>
-        </li>
-      </ol>
-    </DashedBox>
-  </section>
-  <section
     class="container mx-auto py-14 px space-y-3 text-center max-w-5xl"
   >
     <h3 class="text-3xl font-bold">
@@ -95,5 +58,43 @@ import DashedBox from '../components/DashedBox.astro';
       have to work together to solve puzzles, complete challenges, and
       earn points by collecting artifacts along the way.
     </p>
+  </section>
+  <section
+    class="container mx-auto py-10 px grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-7xl"
+  >
+    <DashedBox title="Details">
+      <ol class="text-xl">
+        <li><strong>Date</strong>: October 27th</li>
+        <li>
+          <div class="flex">
+            <div class="mr-1"><strong>Location</strong>:</div>
+            <div>
+              <p>CrossLife Community Church</p>
+              <p>
+                1410 Old Brook Rd <br />Charlottesville, VA 22901
+              </p>
+            </div>
+          </div>
+        </li>
+      </ol>
+    </DashedBox>
+    <DashedBox title="Itinerary">
+      <ol>
+        <li class="text-lg">
+          <strong>6:00pm</strong>: Arrive for Pizza and Fellowship
+        </li>
+        <li class="text-lg">
+          <strong>6:30pm</strong>: The Hunt begins
+        </li>
+        <li class="text-lg">
+          <strong>8:45pm</strong>: The Hunt concludes… all teams meet
+          back at CrossLife
+        </li>
+        <li class="text-lg">
+          <strong>9:00pm</strong>: Message from Jason Turlington and
+          Prizes
+        </li>
+      </ol>
+    </DashedBox>
   </section>
 </Base>
