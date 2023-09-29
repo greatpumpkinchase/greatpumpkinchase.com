@@ -11,3 +11,8 @@ to = "https://greatpumpkinchase.ticketbud.com/gpc"
 from = "/volunteer/register"
 to = "https://docs.google.com/spreadsheets/d/1nCgrv27HLnYFlpsd1Qx9ZD0LcB86OyztRiAsmxept9w"
 status = 302
+
+[[redirects]]
+from = "/wavier"
+to = "https://docs.google.com/forms/d/1_IFXttLJf0ds3_NflhOsFnzj7gHxTiYUdwYoRJenCbU/viewform"
+status = 302
