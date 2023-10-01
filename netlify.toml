@@ -4,7 +4,7 @@ publish = "dist"
 
 [[redirects]]
 status = 302
-from = "/register"
+from = "/register/signup"
 to = "https://greatpumpkinchase.ticketbud.com/gpc"
 
 [[redirects]]
