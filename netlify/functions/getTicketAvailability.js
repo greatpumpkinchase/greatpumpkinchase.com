@@ -6,20 +6,14 @@ const redis = new Redis({
 });
 
 exports.handler = async function (event, context) {
-    let accessToken = await redis.get('accessToken');
-    let response;
-
-    response = await fetch(
-        "https://api.ticketbud.com/events/611668.json?access_token=" + data.access_token,
-    );
+    let response = await getEventDetails();
 
     if (response.ok !== true) {
         data = await getNewRefreshToken();
         await redis.set('refreshToken', data.refresh_token);
+        await redis.set('accessToken', data.access_token);
 
-        response = await fetch(
-            "https://api.ticketbud.com/events/611668.json?access_token=" + data.access_token,
-        );
+        response = await getEventDetails();
     }
 
     data = await response.json();
@@ -29,6 +23,17 @@ exports.handler = async function (event, context) {
         body: JSON.stringify(data.event.tickets_available),
     };
 };
+
+async function getEventDetails() {
+    let accessToken = await redis.get('accessToken');
+    let response = null;
+
+    response = await fetch(
+        "https://api.ticketbud.com/events/611668.json?access_token=" + accessToken,
+    );
+
+    return response;
+}
 
 async function getNewRefreshToken() {
     const refreshToken = await redis.get('refreshToken');
