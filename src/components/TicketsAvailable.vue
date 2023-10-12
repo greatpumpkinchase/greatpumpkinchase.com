@@ -1,14 +1,14 @@
 <template>
     <div>
-        <p v-if="availableTickets !== undefined">Available Tickets: {{ availableTickets }}</p>
+        <p v-if="availableTickets !== undefined">Available Tickets: <strong>{{ availableTickets }}</strong></p>
         <p v-else>Loading...</p>
     </div>
 </template>
 
 <script setup>
-    import { onMounted } from 'vue';
+    import { ref, onMounted } from 'vue';
 
-    let availableTickets;
+    let availableTickets = ref(undefined);
 
     async function getTicketsAvailable() {
         const response = await fetch('/api/getTicketsAvailable');
@@ -18,6 +18,6 @@
     }
 
     onMounted(async () => {
-        availableTickets = await getTicketsAvailable();
+        availableTickets.value = await getTicketsAvailable();
     });
 </script>
