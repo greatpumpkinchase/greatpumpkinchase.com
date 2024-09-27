@@ -1,21 +1,22 @@
 ---
-const { href } = Astro.props;
+const { href, bold = false } = Astro.props;
 
 const active = href === Astro.url.pathname.replace(/\/$/, '');
 ---
 
 <li>
-  <a
-    class:list={[
-      'text-lg',
-      { 'text-gray-600 dark:text-white': !active },
-      {
-        'text-gray-900 dark:text-white border-b-2 border-gray-800 dark:border-white':
-          active,
-      },
-    ]}
-    href={href}
-  >
-    <slot /></a
-  >
+    <a
+        class:list={[
+            'text-lg',
+            { 'text-gray-600 dark:text-white': !active },
+            {
+                'text-gray-900 dark:text-white border-b-2 border-gray-800 dark:border-white':
+                    active,
+            },
+            { btn: bold },
+        ]}
+        href={href}
+    >
+        <slot /></a
+    >
 </li>
