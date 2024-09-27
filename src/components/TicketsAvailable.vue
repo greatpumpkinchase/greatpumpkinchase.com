@@ -11,10 +11,10 @@
     let availableTickets = ref(undefined);
 
     async function getTicketsAvailable() {
-        const response = await fetch('/api/getTicketsAvailable');
+        const response = await fetch('/api/getTicketsAvailable.json');
         const data = await response.json();
 
-        return data;
+        return data.body.tickets_available;
     }
 
     onMounted(async () => {
