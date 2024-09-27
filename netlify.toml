@@ -1,23 +1,3 @@
 [build]
 command = "npm run build"
 publish = "dist"
-
-[[redirects]]
-from = "/api/*"
-to = "/.netlify/functions/:splat"
-status = 200
-
-[[redirects]]
-status = 302
-from = "/register/signup"
-to = "https://greatpumpkinchase.ticketbud.com/gpc"
-
-[[redirects]]
-from = "/volunteer/register"
-to = "https://docs.google.com/spreadsheets/d/1nCgrv27HLnYFlpsd1Qx9ZD0LcB86OyztRiAsmxept9w"
-status = 302
-
-[[redirects]]
-from = "/wavier"
-to = "https://docs.google.com/forms/d/1_IFXttLJf0ds3_NflhOsFnzj7gHxTiYUdwYoRJenCbU/viewform"
-status = 302
