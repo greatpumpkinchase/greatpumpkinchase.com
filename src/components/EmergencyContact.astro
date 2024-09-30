@@ -2,9 +2,10 @@
 import moment from 'moment';
 
 const startDate = moment('2024-10-25');
-const endDate = moment('2024-10-26');
+const endDate = moment('2024-10-26').endOf('day');
 const now = moment();
 const show = now > startDate && now < endDate;
+// const show = true;
 console.log(show);
 ---
 
@@ -13,11 +14,11 @@ console.log(show);
         {
             show ? (
                 <a
-                    href="tel:7196604878"
+                    href="tel:2565298218"
                     class="inline-block py-3 px-12 text-center text-white bg-red-600 rounded-lg shadow"
                 >
                     <h3 class="text-xl mb-2">Emergency Contact</h3>
-                    <p class="text-4xl">(719) 660-4878</p>
+                    <p class="text-4xl">(256) 529-8218</p>
                 </a>
             ) : (
                 <p class="text-2xl py-6 px-12 rounded-xl border-gray-400 dark:border-white border-2 border-dashed">
