@@ -14,7 +14,7 @@ Teams consisting of 6-12 youth and 1-2 adult chaperones will make their way to d
 
 Directly after the chase (9:15pm) all teams will regroup at Crosslife Community Church, where Youth Leader, Luke Forister, will share a message from the Bible. The evening will wrap up with snacks, music, funny videos of the teams doing their challenges, and epic prizes for the three teams who score the most points.
 
-Students may register on the registration page. We are also enlisting the help of adult volunteers! If you’re interested in being a part of this event, let us know by [signing up here](/volunteer/register).
+Students may register on the [registration page](/register). We are also enlisting the help of adult volunteers! If you’re interested in being a part of this event, let us know by [signing up here](/volunteer/register).
 
 ## Additional Information
 
