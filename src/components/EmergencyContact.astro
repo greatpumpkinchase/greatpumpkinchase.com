@@ -1,16 +1,11 @@
 ---
-import moment from 'moment';
-
-const startDate = moment('2024-10-25');
-const endDate = moment('2024-10-26').endOf('day');
-const now = moment();
-const show = now > startDate && now < endDate;
+import showEmergancyContact from '../js/showEmergancyContact';
 ---
 
 <section class="container mx-auto px py-10 mt-10">
     <div class="grid place-content-center">
         {
-            show ? (
+            showEmergancyContact() ? (
                 <a
                     href="tel:2565298218"
                     class="inline-block py-3 px-12 text-center text-white bg-red-600 rounded-lg shadow"

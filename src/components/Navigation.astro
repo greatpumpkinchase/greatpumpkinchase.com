@@ -3,6 +3,7 @@ import { Image } from 'astro:assets';
 import NavigationLink from './NavigationLink.astro';
 import logo from '../assets/gpc-logo.svg';
 import logoDarkBackgrounds from '../assets/gpc-logo-reversed.svg';
+import isRegistrationOpen from '../js/isRegistrationOpen';
 ---
 
 <nav
@@ -33,9 +34,13 @@ import logoDarkBackgrounds from '../assets/gpc-logo-reversed.svg';
                 >Volunteer</NavigationLink
             >
             <NavigationLink href="/contact">Contact</NavigationLink>
-            <NavigationLink href="/register" bold
-                >Register</NavigationLink
-            >
+            {
+                isRegistrationOpen() && (
+                    <NavigationLink href="/register" bold>
+                        Register
+                    </NavigationLink>
+                )
+            }
         </ul>
     </div>
 </nav>
