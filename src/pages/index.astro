@@ -1,133 +1,16 @@
 ---
 import { Image } from 'astro:assets';
 import Base from '../components/layouts/Base.astro';
-import Logo from '../assets/gpc-logo.svg';
-import LogoForDarkBackground from '../assets/gpc-logo-reversed.svg';
+import image01 from '../assets/images/image-01.jpg';
 
 import CanonicalUrl from '../components/utilities/CanonicalUrl.astro';
-import DashedBox from '../components/DashedBox.astro';
-import TicketsAvailable from '../components/TicketsAvailable.vue';
-import isRegistrationOpen from '../js/isRegistrationOpen';
 ---
 
 <Base title="The Great Pumpkin Chase">
     <CanonicalUrl slot="head" page="" />
-    <section class="grid place-items-center py-14 px">
-        <div class="container">
-            <div class="mx-auto max-w-xl mb-24">
-                <Image
-                    src={Logo}
-                    alt="The Great Pumpkin Chase logo"
-                    class="block dark:hidden"
-                />
-                <Image
-                    src={LogoForDarkBackground}
-                    alt="The Great Pumpkin Chase logo"
-                    class="hidden dark:block"
-                />
-            </div>
-            <h1
-                class="text-2xl max-w-4xl mx-auto text-center leading-[1.6] sm:leading-[1.6] md:leading-[1.6]"
-            >
-                <div class="text-5xl font-bold mb-3">
-                    You and your friends are invited!
-                </div>
-                Join the chase on the adventurous path of the Great Pumpkin
-                by working as a team to find clues, complete challenges,
-                and collect points to win great pumpkin prizes!
-            </h1>
+    <section class="min-h-screen flex items-center justify-center">
+        <div class="relative">
+            <Image src={image01} alt="TODO" />
         </div>
-    </section>
-    <section class="container mx-auto py-14 px text-center max-w-5xl">
-        <h3 class="text-3xl font-bold mb-5">
-            What is the Great Pumpkin Chase?
-        </h3>
-        <div class="space-y-3">
-            <p>
-                The GPC 2024 is a city-wide scavenger hunt for any
-                youth, 6th-12th grade. The event begins at 6pm sharp
-                on the evening of Friday, October 25, 2024 at
-                CrossLife Community Church (1410 Old Brook Rd, at Rio
-                Road), and will end at 11pm. If there's inclement
-                weather on Friday night, we will postpone until the
-                next night, on Saturday the 26th.
-            </p>
-            <p>
-                Teams consisting of 6-12 youth and 1-2 adult
-                chaperones will navigate to different waypoints
-                throughout Charlottesville using clues and riddles. At
-                each waypoint teams will work together to solve
-                puzzles, complete challenges, and can earn extra
-                points by collecting artifacts.
-            </p>
-        </div>
-
-        <div class="mt-10">
-            {
-                isRegistrationOpen() ? (
-                    <div>
-                        <a class="btn" href="/register">
-                            Students Register Here!
-                        </a>
-                        <div class="mt-3 text-lg">
-                            <TicketsAvailable client:load />
-                        </div>
-                    </div>
-                ) : (
-                    <p class="text-xl font-bold">
-                        Registration Closed
-                    </p>
-                )
-            }
-        </div>
-    </section>
-    <section
-        class="container mx-auto py-10 px grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-7xl"
-    >
-        <DashedBox title="Details">
-            <ol class="text-xl">
-                <li>
-                    <strong>Date</strong>: October 25th (inclement
-                    weather date: 26th)
-                </li>
-                <li><strong>Time</strong>: 6:00pm SHARP</li>
-                <li>
-                    <div class="flex">
-                        <div class="mr-1">
-                            <strong>Location</strong>:
-                        </div>
-                        <div>
-                            <p>CrossLife Community Church</p>
-                            <p>
-                                1410 Old Brook Rd <br
-                                />Charlottesville, VA 22901
-                            </p>
-                        </div>
-                    </div>
-                </li>
-            </ol>
-        </DashedBox>
-        <DashedBox title="Itinerary">
-            <ol>
-                <li class="text-lg">
-                    <strong>6:00pm</strong>: Arrive for Pizza and
-                    Fellowship
-                </li>
-                <li class="text-lg">
-                    <strong>6:45pm</strong>: The Adventure begins!
-                </li>
-                <li class="text-lg">
-                    <strong>9:15pm</strong>: All teams meet back at
-                    CrossLife
-                </li>
-                <li class="text-lg">
-                    <strong>9:30pm</strong>: Prizes and a Message from
-                    Luke Forister
-                </li>
-                <li class="text-lg">
-                    <strong>11:00pm</strong>: Event Concludes
-                </li>
-            </ol>
-        </DashedBox>
     </section>
 </Base>
