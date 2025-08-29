@@ -52,16 +52,8 @@ const isHome = Astro.url.pathname === '/';
         {import.meta.env.PROD && <Analytics />}
     </head>
     <body class="min-h-screen flex flex-col flex-nowrap">
-        <header
-            class:list={[
-                'z-50 top-0 bg-white/90 w-full',
-                isHome ? 'fixed' : 'relative',
-            ]}
-        >
-            <div class="relative z-50">
-                <Navigation />
-            </div>
-            <div class="absolute z-40 inset-0 backdrop-blur-sm"></div>
+        <header class="z-50 top-0 bg-white/90 w-full">
+            <Navigation />
         </header>
 
         <div class="flex-1">
