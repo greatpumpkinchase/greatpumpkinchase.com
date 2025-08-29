@@ -13,22 +13,112 @@ import CanonicalUrl from '../components/utilities/CanonicalUrl.astro';
             class="absolute inset-0 p-10 flex flex-col justify-center"
         >
             <div class="container mx-auto">
-                <h1 class="text-5xl font-bold">
+                <h1 class="text-6xl font-bold">
                     You and your friends are invited!
                 </h1>
-                <p class="mt-5 max-w-prose">
-                    Join the chase on the adventurous path of the
-                    Great Pumpkin by working as a team to find clues,
-                    complete challenges, and collect points to win
-                    great pumpkin prizes!
+                <p class="text-xl mt-5 max-w-prose">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing
+                    elit. Mauris et accumsan felis. Integer ultricies
+                    neque in felis aliquet accumsan. Aenean egestas
+                    dapibus finibus.
                 </p>
             </div>
         </div>
-        <div class="absolute inset-0 bg-white/70 -z-10"></div>
+        <div class="absolute inset-0 bg-white/80 -z-10"></div>
         <Image
             src={image01}
             alt="TODO"
             class="absolute inset-0 w-full h-full object-cover -z-20"
         />
+    </section>
+    <section class="grid grid-cols-4 divide-x-2">
+        <div class="aspect-[4/3] w-full h-full bg-gray-100"></div>
+        <div class="aspect-[4/3] w-full h-full bg-gray-100"></div>
+        <div class="aspect-[4/3] w-full h-full bg-gray-100"></div>
+        <div class="aspect-[4/3] w-full h-full bg-gray-100"></div>
+    </section>
+    <section>
+        <div class="container mx-auto py-32 px">
+            <h2 class="text-5xl font-bold">The Game</h2>
+            <p class="mt-5 max-w-prose text-lg leading-relaxed prose">
+                Proin ullamcorper mi eu metus laoreet faucibus.
+                Maecenas ullamcorper, lectus et dapibus rutrum, velit
+                turpis faucibus augue, et dapibus ipsum justo ut sem.
+                Mauris dapibus arcu a libero facilisis mattis. Quisque
+                vehicula ornare ligula, sed malesuada mauris
+                condimentum eleifend. Suspendisse luctus est a orci
+                tincidunt aliquet. Pellentesque habitant morbi
+                tristique senectus et netus et malesuada fames ac
+                turpis egestas. Class aptent taciti sociosqu ad litora
+                torquent per conubia nostra, per inceptos himenaeos.
+                Sed vitae aliquam lacus. Mauris et lobortis purus.
+                Nunc in mattis nunc. Phasellus luctus in erat in
+                venenatis. Mauris dapibus at eros quis posuere. Fusce
+                quis mi odio.
+            </p>
+        </div>
+    </section>
+    <section class="bg-gray-100">
+        <div class="container mx-auto py-24 px flex">
+            <div class="flex-auto">
+                <h2 class="text-5xl font-bold">The Details</h2>
+                <div class="mt-10 space-y-2 text-lg leading-relaxed">
+                    <p><strong>Date:</strong> October 24th, 2025</p>
+                    <p><strong>Time:</strong> 6pm sharp</p>
+                    <p class="flex">
+                        <strong>Location:</strong>
+                        <span class="ml-2">
+                            CrossLife Community<br />
+                            Church 1410 Old Brook Rd<br /> Charlottesville,
+                            VA 22901
+                        </span>
+                    </p>
+                </div>
+            </div>
+            <div class="flex-1 aspect-[4/3] w-2/5 h-full bg-gray-200">
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container mx-auto py-32 px text-center">
+            <h2 class="text-5xl font-bold">The Itinerary</h2>
+            <div class="mt-10 space-y-2 text-lg leading-relaxed">
+                <p>
+                    <strong>6:00pm:</strong> Arrive for Pizza and Fellowship
+                </p>
+                <p><strong>6:45pm:</strong> The Adventure begins!</p>
+                <p>
+                    <strong>9:15pm:</strong> All teams meet back at CrossLife
+                </p>
+                <p>
+                    <strong>9:30pm:</strong> Prizes and a Message
+                </p>
+                <p>
+                    <strong>11:00pm:</strong> Event Concludes
+                </p>
+            </div>
+        </div>
+    </section>
+    <section
+        class="bg-gradient-to-br from-orange-100 to-yellow-50 border-t border-orange-200"
+    >
+        <div
+            class="container mx-auto py-32 px text-center flex flex-col items-center"
+        >
+            <h2 class="text-5xl font-bold mb-6 text-orange-700">
+                Get Registered
+            </h2>
+            <p class="text-xl max-w-xl mb-10 text-orange-900">
+                Gather your friends and sign up for an unforgettable
+                night of adventure, fun, and prizes! Spots fill up
+                fast—reserve yours now.
+            </p>
+            <a
+                href="/register"
+                class="inline-block px-10 py-5 rounded-full bg-orange-400 text-white text-2xl font-bold hover:bg-orange-600 transition-colors duration-200 focus:outline-none focus:ring-4 focus:ring-orange-200"
+            >
+                Register Now
+            </a>
+        </div>
     </section>
 </Base>
