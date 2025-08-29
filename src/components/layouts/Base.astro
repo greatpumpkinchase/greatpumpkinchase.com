@@ -6,6 +6,7 @@ import Navigation from '../Navigation.astro';
 import Footer from '../Footer.astro';
 
 const { title } = Astro.props;
+const isHome = Astro.url.pathname === '/';
 ---
 
 <html class="min-h-screen" lang="en">
@@ -51,7 +52,12 @@ const { title } = Astro.props;
         {import.meta.env.PROD && <Analytics />}
     </head>
     <body class="min-h-screen flex flex-col flex-nowrap">
-        <header class="relative lg:sticky z-50 top-0">
+        <header
+            class:list={[
+                'z-50 top-0 bg-white/90 w-full',
+                isHome ? 'fixed' : 'relative',
+            ]}
+        >
             <div class="relative z-50">
                 <Navigation />
             </div>
