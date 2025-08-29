@@ -6,112 +6,120 @@ import image01 from '../assets/images/image-01.jpg';
 import CanonicalUrl from '../components/utilities/CanonicalUrl.astro';
 ---
 
+
 <Base title="The Great Pumpkin Chase">
     <CanonicalUrl slot="head" page="" />
-    <section class="min-h-screen relative">
-        <div
-            class="absolute inset-0 p-10 flex flex-col justify-center"
-        >
-            <div class="container mx-auto">
-                <h1 class="text-6xl font-bold">
-                    You and your friends are invited!
-                </h1>
-                <p class="text-xl mt-5 max-w-prose">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing
-                    elit. Mauris et accumsan felis. Integer ultricies
-                    neque in felis aliquet accumsan. Aenean egestas
-                    dapibus finibus.
-                </p>
-            </div>
-        </div>
-        <div class="absolute inset-0 bg-white/80 -z-10"></div>
+    <!-- Hero Section -->
+    <section class="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-orange-100 via-yellow-50 to-white">
         <Image
             src={image01}
-            alt="TODO"
-            class="absolute inset-0 w-full h-full object-cover -z-20"
+            alt="Teens running at night, fall event"
+            class="absolute inset-0 w-full h-full object-cover object-center opacity-60 -z-10 transition-all duration-700"
         />
-    </section>
-    <section class="grid grid-cols-4 divide-x-2">
-        <div class="aspect-[4/3] w-full h-full bg-gray-100"></div>
-        <div class="aspect-[4/3] w-full h-full bg-gray-100"></div>
-        <div class="aspect-[4/3] w-full h-full bg-gray-100"></div>
-        <div class="aspect-[4/3] w-full h-full bg-gray-100"></div>
-    </section>
-    <section>
-        <div class="container mx-auto py-32 px">
-            <h2 class="text-5xl font-bold">The Game</h2>
-            <p class="mt-5 max-w-prose text-lg leading-relaxed prose">
-                Proin ullamcorper mi eu metus laoreet faucibus.
-                Maecenas ullamcorper, lectus et dapibus rutrum, velit
-                turpis faucibus augue, et dapibus ipsum justo ut sem.
-                Mauris dapibus arcu a libero facilisis mattis. Quisque
-                vehicula ornare ligula, sed malesuada mauris
-                condimentum eleifend. Suspendisse luctus est a orci
-                tincidunt aliquet. Pellentesque habitant morbi
-                tristique senectus et netus et malesuada fames ac
-                turpis egestas. Class aptent taciti sociosqu ad litora
-                torquent per conubia nostra, per inceptos himenaeos.
-                Sed vitae aliquam lacus. Mauris et lobortis purus.
-                Nunc in mattis nunc. Phasellus luctus in erat in
-                venenatis. Mauris dapibus at eros quis posuere. Fusce
-                quis mi odio.
+        <div class="container mx-auto px flex flex-col items-center text-center relative z-10 py-24">
+            <h1 class="text-5xl md:text-7xl font-extrabold text-orange-900 drop-shadow-lg mb-6 tracking-tight">
+                The Great Pumpkin Chase
+            </h1>
+            <p class="text-2xl md:text-3xl font-medium text-orange-800 mb-8 max-w-2xl mx-auto drop-shadow">
+                Charlottesville's legendary fall adventure for teens & friends. Pizza, prizes, and a night you won't forget!
             </p>
+            <a
+                href="/register"
+                class="btn bg-orange-500 hover:bg-orange-600 text-white text-2xl px-10 py-5 rounded-full shadow-lg transition-colors duration-200 focus:outline-none focus:ring-4 focus:ring-orange-200 mb-4"
+            >
+                Register Now
+            </a>
+            <div class="mt-2 text-orange-900/80 text-lg">
+                <span class="font-semibold">Friday, October 24, 2025 &middot; 6pm &ndash; 11pm</span>
+            </div>
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-t from-white/80 to-transparent -z-10"></div>
+    </section>
+
+    <!-- Quick Info Cards -->
+    <section class="container mx-auto px grid grid-cols-1 md:grid-cols-3 gap-8 -mt-24 relative z-20">
+        <div class="rounded-2xl bg-white/90 shadow-lg p-8 flex flex-col items-center border-t-4 border-orange-400">
+            <span class="text-4xl mb-2">🎃</span>
+            <h3 class="text-xl font-bold mb-1 text-orange-800">Who</h3>
+            <p class="text-center text-lg">Middle &amp; High Schoolers (grades 6-12) and their friends</p>
+        </div>
+        <div class="rounded-2xl bg-white/90 shadow-lg p-8 flex flex-col items-center border-t-4 border-orange-400">
+            <span class="text-4xl mb-2">📍</span>
+            <h3 class="text-xl font-bold mb-1 text-orange-800">Where</h3>
+            <p class="text-center text-lg">CrossLife Community Church<br />1410 Old Brook Rd, Charlottesville, VA</p>
+        </div>
+        <div class="rounded-2xl bg-white/90 shadow-lg p-8 flex flex-col items-center border-t-4 border-orange-400">
+            <span class="text-4xl mb-2">⏰</span>
+            <h3 class="text-xl font-bold mb-1 text-orange-800">When</h3>
+            <p class="text-center text-lg">Friday, October 24, 2025<br />6:00pm &ndash; 11:00pm</p>
         </div>
     </section>
-    <section class="bg-gray-100">
-        <div class="container mx-auto py-24 px flex">
-            <div class="flex-auto">
-                <h2 class="text-5xl font-bold">The Details</h2>
-                <div class="mt-10 space-y-2 text-lg leading-relaxed">
-                    <p><strong>Date:</strong> October 24th, 2025</p>
-                    <p><strong>Time:</strong> 6pm sharp</p>
-                    <p class="flex">
-                        <strong>Location:</strong>
-                        <span class="ml-2">
-                            CrossLife Community<br />
-                            Church 1410 Old Brook Rd<br /> Charlottesville,
-                            VA 22901
-                        </span>
-                    </p>
+
+    <!-- About the Game -->
+    <section class="container mx-auto px py-32">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="text-4xl md:text-5xl font-bold text-orange-800 mb-6">What is the Pumpkin Chase?</h2>
+                <p class="text-lg md:text-xl leading-relaxed text-gray-800 mb-6">
+                    Teams of friends race across Charlottesville, solving clues, completing wild challenges, and chasing down the legendary Pumpkin! It's a night packed with adventure, teamwork, and surprises.
+                </p>
+                <ul class="list-disc pl-6 text-lg text-gray-700 space-y-2">
+                    <li>Pizza dinner &amp; snacks included</li>
+                    <li>Epic city-wide scavenger hunt</li>
+                    <li>Prizes for top teams &amp; best costumes</li>
+                    <li>All activities supervised by adult volunteers</li>
+                </ul>
+            </div>
+            <div class="flex justify-center">
+                <div class="rounded-2xl overflow-hidden shadow-xl border-4 border-orange-200 bg-white/80 aspect-[4/3] w-full max-w-md flex items-center justify-center">
+                    <Image src={image01} alt="Pumpkin Chase event" class="object-cover w-full h-full" />
                 </div>
             </div>
-            <div class="flex-1 aspect-[4/3] w-2/5 h-full bg-gray-200">
-            </div>
         </div>
     </section>
-    <section>
-        <div class="container mx-auto py-32 px text-center">
-            <h2 class="text-5xl font-bold">The Itinerary</h2>
-            <div class="mt-10 space-y-2 text-lg leading-relaxed">
-                <p>
-                    <strong>6:00pm:</strong> Arrive for Pizza and Fellowship
-                </p>
-                <p><strong>6:45pm:</strong> The Adventure begins!</p>
-                <p>
-                    <strong>9:15pm:</strong> All teams meet back at CrossLife
-                </p>
-                <p>
-                    <strong>9:30pm:</strong> Prizes and a Message
-                </p>
-                <p>
-                    <strong>11:00pm:</strong> Event Concludes
-                </p>
+
+    <!-- Details & Itinerary -->
+    <section class="bg-orange-50 border-t border-orange-200 py-24">
+            <div class="container mx-auto px grid md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-bold text-orange-800 mb-6">Event Details</h2>
+                    <div class="space-y-3 text-lg text-gray-800">
+                        <p><strong>Date:</strong> Friday, October 24, 2025</p>
+                        <p><strong>Time:</strong> 6:00pm &ndash; 11:00pm</p>
+                        <p><strong>Location:</strong> CrossLife Community Church, 1410 Old Brook Rd, Charlottesville, VA</p>
+                    </div>
+                    <div class="mt-8">
+                        <h3 class="text-2xl font-bold text-orange-700 mb-2">Itinerary</h3>
+                        <ul class="space-y-1 text-lg">
+                            <li><strong>6:00pm:</strong> Pizza &amp; Fellowship</li>
+                            <li><strong>6:45pm:</strong> The Adventure Begins!</li>
+                            <li><strong>9:15pm:</strong> All teams return</li>
+                            <li><strong>9:30pm:</strong> Prizes &amp; Message</li>
+                            <li><strong>11:00pm:</strong> Event Concludes</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="flex flex-col items-center">
+                            <div class="rounded-2xl bg-white/80 border-4 border-orange-200 shadow-lg p-8 w-full max-w-md flex flex-col items-center">
+                                <span class="text-3xl mb-2">📝</span>
+                                <h3 class="text-xl font-bold mb-1 text-orange-800">How to Join</h3>
+                                <p class="text-center text-lg mb-2 text-green-700 font-semibold">Just register online—no ticket needed!</p>
+                                <div class="mt-2">
+                                    <span class="font-semibold text-orange-700">Spots are limited—register soon!</span>
+                                </div>
+                            </div>
+                </div>
             </div>
-        </div>
     </section>
-    <section
-        class="bg-gradient-to-br from-orange-100 to-yellow-50 border-t border-orange-200"
-    >
-        <div
-            class="container mx-auto py-32 px text-center flex flex-col items-center"
-        >
-            <h2 class="text-5xl font-bold mb-6 text-orange-700">
-                Get Registered
+
+    <!-- Call to Action -->
+    <section class="bg-gradient-to-br from-orange-100 to-yellow-50 border-t border-orange-200">
+        <div class="container mx-auto py-24 px text-center flex flex-col items-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6 text-orange-700">
+                Ready to Chase?
             </h2>
             <p class="text-xl max-w-xl mb-10 text-orange-900">
-                Gather your friends and sign up for an unforgettable
-                night of adventure, fun, and prizes! Spots fill up
-                fast—reserve yours now.
+                Gather your friends and sign up for an unforgettable night of adventure, fun, and prizes! Spots fill up fast—reserve yours now.
             </p>
             <a
                 href="/register"
