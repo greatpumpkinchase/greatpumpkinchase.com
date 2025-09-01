@@ -8,11 +8,11 @@ const active = href === Astro.url.pathname.replace(/\/$/, '');
     <a
         class:list={[
             'text-lg',
-            { 'text-gray-600': !active },
+            { 'text-gray-600': !active && !bold },
             {
                 'text-gray-900 border-b-2 border-gray-800': active,
             },
-            { 'btn text-white': bold },
+            { btn: bold },
         ]}
         href={href}
     >
