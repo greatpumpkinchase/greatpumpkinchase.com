@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
@@ -19,6 +20,10 @@
     }
 
     .btn {
-        @apply inline-block rounded-md bg-blue-500 px-6 py-3 text-xl font-semibold text-white shadow-sm hover:bg-blue-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500;
+        @apply inline-block px-8 py-3 rounded-full bg-orange-500 text-white text-xl font-bold hover:bg-orange-600 transition-colors duration-200 focus:outline-none focus:ring-4 focus:ring-orange-200;
+    }
+
+    .btn-lg {
+        @apply inline-block px-10 py-5 rounded-full bg-orange-500 text-white text-2xl font-bold hover:bg-orange-600 transition-colors duration-200 focus:outline-none focus:ring-4 focus:ring-orange-200;
     }
 }

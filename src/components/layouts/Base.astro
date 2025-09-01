@@ -5,7 +5,8 @@ import Analytics from '../Analytics.astro';
 import Navigation from '../Navigation.astro';
 import Footer from '../Footer.astro';
 
-const { title } = Astro.props;
+const { title, navigation, footer } = Astro.props;
+const isHome = Astro.url.pathname === '/';
 ---
 
 <html class="min-h-screen" lang="en">
@@ -50,20 +51,19 @@ const { title } = Astro.props;
 
         {import.meta.env.PROD && <Analytics />}
     </head>
-    <body
-        class="min-h-screen flex flex-col flex-nowrap bg-blue-50 dark:bg-gray-900 dark:text-white"
-    >
-        <header class="relative lg:sticky z-50 top-0">
-            <div class="relative z-50">
-                <Navigation />
-            </div>
-            <div class="absolute z-40 inset-0 backdrop-blur-sm"></div>
-        </header>
+    <body class="min-h-screen flex flex-col flex-nowrap">
+        {
+            navigation !== false && (
+                <header class="z-50 top-0 bg-white/90 w-full">
+                    <Navigation />
+                </header>
+            )
+        }
 
         <div class="flex-1">
             <slot />
         </div>
 
-        <Footer />
+        {footer !== false && <Footer />}
     </body>
 </html>

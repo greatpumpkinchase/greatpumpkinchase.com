@@ -2,7 +2,6 @@
 import { Image } from 'astro:assets';
 import NavigationLink from './NavigationLink.astro';
 import logo from '../assets/gpc-logo.svg';
-import logoDarkBackgrounds from '../assets/gpc-logo-reversed.svg';
 import isRegistrationOpen from '../js/isRegistrationOpen';
 ---
 
@@ -12,13 +11,8 @@ import isRegistrationOpen from '../js/isRegistrationOpen';
     <div>
         <a class="inline-block py-3 text-xl font-bold" href="/">
             <Image
-                class="h-24 md:h-32 w-auto block dark:hidden"
+                class="h-16 w-auto block"
                 src={logo}
-                alt="Great Pumpkin Chase logo with text only"
-            />
-            <Image
-                class="h-24 md:h-32 w-auto hidden dark:block"
-                src={logoDarkBackgrounds}
                 alt="Great Pumpkin Chase logo with text only"
             />
         </a>
@@ -36,7 +30,7 @@ import isRegistrationOpen from '../js/isRegistrationOpen';
             <NavigationLink href="/contact">Contact</NavigationLink>
             {
                 isRegistrationOpen() && (
-                    <NavigationLink href="/register" bold>
+                    <NavigationLink href="/registration" bold>
                         Register
                     </NavigationLink>
                 )

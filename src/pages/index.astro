@@ -1,133 +1,222 @@
 ---
 import { Image } from 'astro:assets';
 import Base from '../components/layouts/Base.astro';
-import Logo from '../assets/gpc-logo.svg';
-import LogoForDarkBackground from '../assets/gpc-logo-reversed.svg';
-
-import CanonicalUrl from '../components/utilities/CanonicalUrl.astro';
-import DashedBox from '../components/DashedBox.astro';
-import TicketsAvailable from '../components/TicketsAvailable.vue';
-import isRegistrationOpen from '../js/isRegistrationOpen';
+import image01 from '../assets/images/image-01.jpg';
 ---
 
 <Base title="The Great Pumpkin Chase">
-    <CanonicalUrl slot="head" page="" />
-    <section class="grid place-items-center py-14 px">
-        <div class="container">
-            <div class="mx-auto max-w-xl mb-24">
-                <Image
-                    src={Logo}
-                    alt="The Great Pumpkin Chase logo"
-                    class="block dark:hidden"
-                />
-                <Image
-                    src={LogoForDarkBackground}
-                    alt="The Great Pumpkin Chase logo"
-                    class="hidden dark:block"
-                />
-            </div>
-            <h1
-                class="text-2xl max-w-4xl mx-auto text-center leading-[1.6] sm:leading-[1.6] md:leading-[1.6]"
-            >
-                <div class="text-5xl font-bold mb-3">
-                    You and your friends are invited!
-                </div>
-                Join the chase on the adventurous path of the Great Pumpkin
-                by working as a team to find clues, complete challenges,
-                and collect points to win great pumpkin prizes!
-            </h1>
-        </div>
-    </section>
-    <section class="container mx-auto py-14 px text-center max-w-5xl">
-        <h3 class="text-3xl font-bold mb-5">
-            What is the Great Pumpkin Chase?
-        </h3>
-        <div class="space-y-3">
-            <p>
-                The GPC 2024 is a city-wide scavenger hunt for any
-                youth, 6th-12th grade. The event begins at 6pm sharp
-                on the evening of Friday, October 25, 2024 at
-                CrossLife Community Church (1410 Old Brook Rd, at Rio
-                Road), and will end at 11pm. If there's inclement
-                weather on Friday night, we will postpone until the
-                next night, on Saturday the 26th.
-            </p>
-            <p>
-                Teams consisting of 6-12 youth and 1-2 adult
-                chaperones will navigate to different waypoints
-                throughout Charlottesville using clues and riddles. At
-                each waypoint teams will work together to solve
-                puzzles, complete challenges, and can earn extra
-                points by collecting artifacts.
-            </p>
-        </div>
-
-        <div class="mt-10">
-            {
-                isRegistrationOpen() ? (
-                    <div>
-                        <a class="btn" href="/register">
-                            Students Register Here!
-                        </a>
-                        <div class="mt-3 text-lg">
-                            <TicketsAvailable client:load />
-                        </div>
-                    </div>
-                ) : (
-                    <p class="text-xl font-bold">
-                        Registration Closed
-                    </p>
-                )
-            }
-        </div>
-    </section>
+    <!-- Hero Section -->
     <section
-        class="container mx-auto py-10 px grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-7xl"
+        class="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-orange-100 via-yellow-50 to-white"
     >
-        <DashedBox title="Details">
-            <ol class="text-xl">
-                <li>
-                    <strong>Date</strong>: October 25th (inclement
-                    weather date: 26th)
-                </li>
-                <li><strong>Time</strong>: 6:00pm SHARP</li>
-                <li>
-                    <div class="flex">
-                        <div class="mr-1">
-                            <strong>Location</strong>:
+        <Image
+            src={image01}
+            alt="Teens running at night, fall event"
+            class="absolute inset-0 w-full h-full object-cover object-center opacity-60 -z-10 transition-all duration-700"
+        />
+        <div
+            class="container mx-auto px flex flex-col items-center text-center relative z-10 py-24"
+        >
+            <h1
+                class="text-5xl md:text-7xl font-extrabold text-orange-900 mb-6 tracking-tight"
+            >
+                The Great Pumpkin Chase
+            </h1>
+            <p
+                class="text-2xl md:text-3xl font-medium text-blue-800 mb-8 max-w-2xl mx-auto"
+            >
+                Charlottesville's legendary fall adventure for teens &
+                friends. Pizza, prizes, and a night you won't forget!
+            </p>
+            <a href="/registration" class="btn-lg"> Register Now </a>
+            <div class="mt-6 mb-5 text-blue-900/80 text-lg">
+                <span class="font-semibold"
+                    >Saturday, October 25, 2025 &middot; 6pm &ndash;
+                    11pm</span
+                >
+            </div>
+        </div>
+        <div
+            class="absolute inset-0 bg-gradient-to-t from-white/80 to-transparent -z-10"
+        >
+        </div>
+    </section>
+
+    <!-- Quick Info Cards -->
+    <section
+        class="container mx-auto px grid grid-cols-1 lg:grid-cols-3 gap-8 -mt-12 md:-mt-24 relative z-20"
+    >
+        <div
+            class="rounded-2xl bg-white/90 shadow-lg p-8 flex flex-col items-center border-t-4 border-orange-400"
+        >
+            <span class="text-4xl mb-2">🎃</span>
+            <h3 class="text-xl font-bold mb-1 text-orange-800">
+                Who
+            </h3>
+            <p class="text-center text-lg">
+                Middle &amp; High Schoolers (grades 6-12) and their
+                friends
+            </p>
+        </div>
+        <div
+            class="rounded-2xl bg-white/90 shadow-lg p-8 flex flex-col items-center border-t-4 border-orange-400"
+        >
+            <span class="text-4xl mb-2">📍</span>
+            <h3 class="text-xl font-bold mb-1 text-orange-800">
+                Where
+            </h3>
+            <p class="text-center text-lg">
+                CrossLife Community Church<br />1410 Old Brook Rd,
+                Charlottesville, VA
+            </p>
+        </div>
+        <div
+            class="rounded-2xl bg-white/90 shadow-lg p-8 flex flex-col items-center border-t-4 border-orange-400"
+        >
+            <span class="text-4xl mb-2">⏰</span>
+            <h3 class="text-xl font-bold mb-1 text-orange-800">
+                When
+            </h3>
+            <p class="text-center text-lg">
+                Saturday, October 25, 2025<br />6:00pm &ndash; 11:00pm
+            </p>
+        </div>
+    </section>
+
+    <!-- About the Game -->
+    <section class="container mx-auto px py-24 md:py-32">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2
+                    class="text-4xl md:text-5xl font-bold text-orange-800 mb-6"
+                >
+                    What is the Pumpkin Chase?
+                </h2>
+                <p
+                    class="text-lg md:text-xl leading-relaxed text-gray-800 mb-6"
+                >
+                    Teams of friends race across Charlottesville,
+                    solving clues, completing wild challenges, and
+                    chasing down the legendary Pumpkin! It's a night
+                    packed with adventure, teamwork, and surprises.
+                </p>
+                <ul
+                    class="list-disc pl-6 text-lg text-gray-700 space-y-2"
+                >
+                    <li>Pizza dinner &amp; snacks included</li>
+                    <li>Epic city-wide scavenger hunt</li>
+                    <li>Prizes for top teams &amp; best costumes</li>
+                    <li>
+                        All activities supervised by adult volunteers
+                    </li>
+                </ul>
+            </div>
+            <div class="flex justify-center">
+                <div
+                    class="rounded-2xl overflow-hidden shadow-xl border-4 border-orange-200 bg-white/80 aspect-[4/3] w-full max-w-md flex items-center justify-center"
+                >
+                    <Image
+                        src={image01}
+                        alt="Pumpkin Chase event"
+                        class="object-cover w-full h-full"
+                    />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Details & Itinerary -->
+    <section
+        class="bg-blue-50 border-t border-blue-200 py-20 md:py-24"
+    >
+        <div
+            class="container mx-auto px grid md:grid-cols-2 gap-16 items-center"
+        >
+            <div>
+                <h2
+                    class="text-4xl md:text-5xl font-bold text-blue-800 mb-6"
+                >
+                    Event Details
+                </h2>
+                <div class="space-y-3 text-lg text-gray-800">
+                    <p>
+                        <strong>Date:</strong> Saturday, October 25, 2025
+                    </p>
+                    <p>
+                        <strong>Time:</strong> 6:00pm &ndash; 11:00pm
+                    </p>
+                    <p>
+                        <strong>Location:</strong> CrossLife Community
+                        Church, 1410 Old Brook Rd, Charlottesville, VA
+                    </p>
+                </div>
+                <div class="mt-8">
+                    <h3 class="text-2xl font-bold text-blue-700 mb-2">
+                        Itinerary
+                    </h3>
+                    <ul class="space-y-1 text-lg">
+                        <li>
+                            <strong>6:00pm:</strong> Pizza &amp; Fellowship
+                        </li>
+                        <li>
+                            <strong>6:45pm:</strong> The Adventure Begins!
+                        </li>
+                        <li>
+                            <strong>9:15pm:</strong> All teams return
+                        </li>
+                        <li>
+                            <strong>9:30pm:</strong> Prizes &amp; Message
+                        </li>
+                        <li>
+                            <strong>11:00pm:</strong> Event Concludes
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="flex flex-col items-center">
+                <div
+                    class="rounded-2xl bg-white/80 border-4 border-blue-200 shadow-lg p-8 w-full max-w-md flex flex-col items-center"
+                >
+                    <span class="text-3xl mb-2">📝</span>
+                    <h3 class="text-xl font-bold mb-1 text-blue-800">
+                        How to Join
+                    </h3>
+                    <p
+                        class="text-center text-lg mb-2 text-green-700 font-semibold"
+                    >
+                        Just register online—no ticket needed!
+                    </p>
+                    <div class="mt-2 text-center">
+                        <div class="font-semibold text-blue-700">
+                            Spots are limited—register soon!
                         </div>
-                        <div>
-                            <p>CrossLife Community Church</p>
-                            <p>
-                                1410 Old Brook Rd <br
-                                />Charlottesville, VA 22901
-                            </p>
-                        </div>
+                        <a href="/registration" class="btn mt-6">
+                            Register Now
+                        </a>
                     </div>
-                </li>
-            </ol>
-        </DashedBox>
-        <DashedBox title="Itinerary">
-            <ol>
-                <li class="text-lg">
-                    <strong>6:00pm</strong>: Arrive for Pizza and
-                    Fellowship
-                </li>
-                <li class="text-lg">
-                    <strong>6:45pm</strong>: The Adventure begins!
-                </li>
-                <li class="text-lg">
-                    <strong>9:15pm</strong>: All teams meet back at
-                    CrossLife
-                </li>
-                <li class="text-lg">
-                    <strong>9:30pm</strong>: Prizes and a Message from
-                    Luke Forister
-                </li>
-                <li class="text-lg">
-                    <strong>11:00pm</strong>: Event Concludes
-                </li>
-            </ol>
-        </DashedBox>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section
+        class="bg-gradient-to-br from-orange-100 to-yellow-50 border-t border-orange-200"
+    >
+        <div
+            class="container mx-auto py-24 px text-center flex flex-col items-center"
+        >
+            <h2
+                class="text-4xl md:text-5xl font-extrabold mb-6 text-orange-900"
+            >
+                Ready to Chase?
+            </h2>
+            <p class="text-xl max-w-xl mb-10 text-orange-900">
+                Gather your friends and sign up for an unforgettable
+                night of adventure, fun, and prizes! Spots fill up
+                fast—reserve yours now.
+            </p>
+            <a href="/registration" class="btn-lg"> Register Now </a>
+        </div>
     </section>
 </Base>
