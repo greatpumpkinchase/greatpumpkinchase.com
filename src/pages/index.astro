@@ -2,12 +2,9 @@
 import { Image } from 'astro:assets';
 import Base from '../components/layouts/Base.astro';
 import image01 from '../assets/images/image-01.jpg';
-
-import CanonicalUrl from '../components/utilities/CanonicalUrl.astro';
 ---
 
 <Base title="The Great Pumpkin Chase">
-    <CanonicalUrl slot="head" page="" />
     <!-- Hero Section -->
     <section
         class="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-orange-100 via-yellow-50 to-white"
@@ -218,7 +215,7 @@ import CanonicalUrl from '../components/utilities/CanonicalUrl.astro';
             class="container mx-auto py-24 px text-center flex flex-col items-center"
         >
             <h2
-                class="text-4xl md:text-5xl font-extrabold mb-6 text-orange-800"
+                class="text-4xl md:text-5xl font-extrabold mb-6 text-orange-900"
             >
                 Ready to Chase?
             </h2>
