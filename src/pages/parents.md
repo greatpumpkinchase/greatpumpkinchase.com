@@ -18,6 +18,6 @@ Students may register on the registration page. We are also enlisting the help o
 
 ## Additional Information
 
--   All Drivers must be mature adults and possess a clean driving record. They will be instructed to exercise great caution and not exceed the speed limit at any time throughout the evening.
+-   All drivers must be over the age of 21 and possess a clean driving record. They will be instructed to exercise great caution and not exceed the speed limit at any time throughout the evening.
 -   Should any concern arise, you can find our Emergency Contact on the [contact page](/contact) of this website.
 -   Youth are welcome to carry their phones to stay in touch with parents.
