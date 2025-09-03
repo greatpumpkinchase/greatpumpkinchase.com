@@ -43,7 +43,7 @@ import isRegistrationOpen from '../js/isRegistrationOpen.js';
                 </div>
                 {
                     isRegistrationOpen() && (
-                        <div class="w-full lg:w-1/2 flex justify-center">
+                        <div class="w-full lg:w-1/2 flex flex-col items-center">
                             <iframe
                                 src="https://wlda547t.nocodb.com/#/nc/form/54ed6d40-726b-4af3-b1e4-994150a931f1"
                                 title="Registration Form"
@@ -53,6 +53,15 @@ import isRegistrationOpen from '../js/isRegistrationOpen.js';
                                 allowfullscreen
                                 class="w-full rounded-lg shadow-md border"
                             />
+                            <p class="mt-5 text-center text-gray-500">
+                                Having trouble viewing the form above?{' '}
+                                <a
+                                    class="text-blue-600 hover:text-blue-500 border-b border-blue-600 hover:border-blue-500"
+                                    href="https://wlda547t.nocodb.com/#/nc/form/54ed6d40-726b-4af3-b1e4-994150a931f1"
+                                >
+                                    Open form in a new page.
+                                </a>
+                            </p>
                         </div>
                     )
                 }
