@@ -11,42 +11,52 @@ import isRegistrationOpen from '../js/isRegistrationOpen.js';
     <section
         class="min-h-screen flex flex-col items-center justify-center"
     >
-        <div class="container mx-auto px-4 py-24 text-center">
-            <h1
-                class="text-5xl md:text-6xl font-extrabold text-orange-900 mb-8 tracking-tight"
+        <div class="container mx-auto px-4 py-24">
+            <div
+                class="flex flex-col lg:flex-row items-start justify-center gap-8 lg:gap-12"
             >
-                Registration
-            </h1>
-            {
-                isRegistrationOpen() ? (
-                    <>
-                        <p class="text-2xl md:text-3xl text-blue-800 mb-8 max-w-2xl mx-auto">
-                            Registration is now open!
-                            <br />
-                            Please fill out the form below to sign up
-                            for The Great Pumpkin Chase.
-                        </p>
-                        <div class="max-w-2xl mx-auto mb-8">
+                <div
+                    class="w-full lg:w-1/2 text-center lg:text-left flex flex-col items-center lg:items-start justify-center mb-8 lg:mb-0"
+                >
+                    <h1
+                        class="text-5xl md:text-6xl font-extrabold text-orange-900 mb-8 tracking-tight"
+                    >
+                        Registration
+                    </h1>
+                    {
+                        isRegistrationOpen() ? (
+                            <p class="text-2xl md:text-3xl text-blue-800 mb-8 max-w-xl mx-auto md:mx-0">
+                                Registration is now open!
+                                <br />
+                                Please fill out the form to sign up
+                                for The Great Pumpkin Chase.
+                            </p>
+                        ) : (
+                            <p class="text-2xl md:text-3xl text-blue-800 mb-8 max-w-xl mx-auto md:mx-0">
+                                Registration is currently closed.
+                                <br />
+                                Please check back later for updates!
+                            </p>
+                        )
+                    }
+                    <a href="/" class="btn-lg mt-4"> Back to Home </a>
+                </div>
+                {
+                    isRegistrationOpen() && (
+                        <div class="w-full lg:w-1/2 flex justify-center">
                             <iframe
                                 src="https://wlda547t.nocodb.com/#/nc/form/54ed6d40-726b-4af3-b1e4-994150a931f1"
                                 title="Registration Form"
                                 width="100%"
-                                height="800"
+                                height="600"
                                 frameborder="0"
                                 allowfullscreen
                                 class="w-full rounded-lg shadow-md border"
                             />
                         </div>
-                    </>
-                ) : (
-                    <p class="text-2xl md:text-3xl text-blue-800 mb-8 max-w-2xl mx-auto">
-                        Registration is currently closed.
-                        <br />
-                        Please check back later for updates!
-                    </p>
-                )
-            }
-            <a href="/" class="btn-lg mt-4"> Back to Home </a>
+                    )
+                }
+            </div>
         </div>
     </section>
 </Base>
