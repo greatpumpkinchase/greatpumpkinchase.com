@@ -4,7 +4,7 @@ layout: ../components/layouts/Markdown.astro
 
 # Parent Info
 
-Our goal is to create a safe environment where your student can hear the message of the Gospel and have a blast as they participate with their friends in the Great Pumpkin Chase 2025 event.
+Our goal is to create a safe environment where your student can hear the message of the Gospel and have a blast as they participate with their friends in this grand, city-wide adventure.
 
 ## What is the Great Pumpkin Chase?
 
