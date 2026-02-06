@@ -1,14 +1,15 @@
 import moment from 'moment-timezone';
+import { EVENT } from '../config/event.js';
 
 export default function () {
-    // Define the start and end dates in EST
-    const startDate = moment.tz('2025-09-02', 'America/New_York').tz('UTC', true);
-    const endDate = moment.tz('2025-10-18', 'America/New_York').tz('UTC', true);
+    const startDate = moment
+        .tz(EVENT.registration.openDate, EVENT.timezone)
+        .tz('UTC', true);
+    const endDate = moment
+        .tz(EVENT.registration.closeDate, EVENT.timezone)
+        .tz('UTC', true);
 
-    // Get the current time in UTC
     const now = moment.utc();
 
-    const show = now.isBetween(startDate, endDate);
-
-    return show;
+    return now.isBetween(startDate, endDate);
 }

@@ -1,0 +1,78 @@
+---
+import Base from '../components/layouts/Base.astro';
+import CanonicalUrl from '../components/utilities/CanonicalUrl.astro';
+import { EVENT } from '../config/event.js';
+---
+
+<Base title="Parent Info">
+    <CanonicalUrl slot="head" page="parents" />
+    <section class="container mx-auto py-10 px prose marker:text-gray-500">
+        <h1>Parent Info</h1>
+
+        <p>
+            Our goal is to create a safe environment where your student
+            can hear the message of the Gospel and have a blast as they
+            participate with their friends in this grand, city-wide
+            adventure.
+        </p>
+
+        <h2>What is the Great Pumpkin Chase?</h2>
+
+        <p>
+            The GPC {EVENT.year} is a city-wide scavenger hunt for any
+            youth, 6th - 12th grade. The event begins at {EVENT.startTimeLabel}
+            sharp on
+            the evening of {EVENT.dateLabel} at {EVENT.locationName} (
+            {EVENT.locationAddress}), and will end at {EVENT.endTimeLabel}
+            .
+        </p>
+
+        <p>
+            Teams consisting of 6-12 youth and 1-2 adult chaperones
+            will make their way to different waypoints throughout
+            Charlottesville. The waypoints are carefully selected to
+            be well-known and safe public places. Waypoint Sentinels
+            guard these locations as teams come and go in order to
+            ensure safety and to assist the adventurers on their chase.
+            At each waypoint, teams will work together to solve
+            puzzles, complete challenges, and earn points by collecting
+            artifacts along the way.
+        </p>
+
+        <p>
+            Directly after the chase (9:15pm), all teams will regroup
+            at {EVENT.locationName}, where Youth Leader, Jason
+            Turlington, will share a message from the Bible. The
+            evening will wrap up with snacks, music, funny videos of
+            the teams doing their challenges, and epic prizes for the
+            three teams who score the most points.
+        </p>
+
+        <p>
+            Students may register on the registration page. We are
+            also enlisting the help of adult volunteers! If you’re
+            interested in being a part of this event, let us know by
+            <a href="/volunteer/register">signing up here</a>.
+        </p>
+
+        <h2>Additional Information</h2>
+
+        <ul>
+            <li>
+                All drivers must be over the age of 21 and possess a
+                clean driving record. They will be instructed to
+                exercise great caution and not exceed the speed limit
+                at any time throughout the evening.
+            </li>
+            <li>
+                Should any concern arise, you can find our Emergency
+                Contact on the <a href="/contact">contact page</a> of
+                this website.
+            </li>
+            <li>
+                Youth are welcome to carry their phones to stay in
+                touch with parents.
+            </li>
+        </ul>
+    </section>
+</Base>
