@@ -1,18 +1,35 @@
 ---
+import moment from 'moment-timezone';
 import Base from '../components/layouts/Base.astro';
-import isRegistrationOpen from '../js/isRegistrationOpen.js';
 import { EVENT } from '../config/event.js';
-const open = isRegistrationOpen();
+import { getRegistrationStatus } from '../js/isRegistrationOpen.js';
+
+const registrationStatus = getRegistrationStatus();
+const opensOn = moment.tz(EVENT.registration.openDate, EVENT.timezone).format('MMMM D, YYYY');
 ---
-<Base title="Register | The Great Pumpkin Chase" footer={false}>
+<Base title="Register | The Great Pumpkin Chase">
     <main class="registration"><div class="container">
-        {open ? (
-            <div class="registration-grid">
-                <div class="registration-copy"><h1>Let’s get<br />you chasing.</h1><p>Registration is open for the Great Pumpkin Chase. Complete the form, gather your crew, and we’ll see you on {EVENT.dateLabel}.</p><p class="notice">Registration closes {EVENT.registrationCloseLabel}.</p><a href="/" class="text-link">← Back to home</a></div>
-                <div><div class="registration-frame"><iframe src="https://wlda547t.nocodb.com/#/nc/form/54ed6d40-726b-4af3-b1e4-994150a931f1" title="Great Pumpkin Chase registration form" allowfullscreen /></div><p style="text-align:center;margin-top:17px;color:#59655e;font-size:.9rem">Having trouble viewing the form? <a class="text-link" href="https://wlda547t.nocodb.com/#/nc/form/54ed6d40-726b-4af3-b1e4-994150a931f1">Open it in a new page.</a></p></div>
+        {registrationStatus === 'open' ? (
+            <div class="closed-card registration-status-card">
+                <p class="eyebrow">Registration is open</p>
+                <h1>Let’s get you chasing.</h1>
+                <p>Complete your registration on our secure registration site, then gather your crew for the Great Pumpkin Chase on {EVENT.dateLabel}.</p>
+                <a href={EVENT.registrationUrl} class="btn btn-arrow" style="margin-top:20px">Register now</a>
+                <p class="registration-help">You’ll continue to app.greatpumpkinchase.com to complete your registration.</p>
+            </div>
+        ) : registrationStatus === 'upcoming' ? (
+            <div class="closed-card registration-status-card">
+                <p class="eyebrow">Save the date</p>
+                <h1>Registration opens soon.</h1>
+                <p>Online registration opens {opensOn}. Check back here then to register your student for the Great Pumpkin Chase.</p>
+                <a href="/parents" class="text-link">Read parent information</a>
             </div>
         ) : (
-            <div class="closed-card"><h1>Registration is closed.</h1><p>Thanks for your interest in the Great Pumpkin Chase. Please check back later for updates about our next adventure.</p><a href="/" class="btn btn-arrow" style="margin-top:20px">Back to home</a></div>
+            <div class="closed-card registration-status-card">
+                <h1>Registration is closed.</h1>
+                <p>Thanks for your interest in the Great Pumpkin Chase. Please check back later for updates about our next adventure.</p>
+                <a href="/parents" class="text-link">Read parent information</a>
+            </div>
         )}
     </div></main>
 </Base>

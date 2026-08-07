@@ -2,7 +2,6 @@
 import { Image } from 'astro:assets';
 import NavigationLink from './NavigationLink.astro';
 import logo from '../assets/gpc-logo.png';
-import isRegistrationOpen from '../js/isRegistrationOpen';
 ---
 <nav class="site-nav" aria-label="Main navigation">
     <a class="brand" href="/" aria-label="The Great Pumpkin Chase home"><Image src={logo} alt="The Great Pumpkin Chase" /></a>
@@ -10,6 +9,6 @@ import isRegistrationOpen from '../js/isRegistrationOpen';
         <NavigationLink href="/parents">Parent Info</NavigationLink>
         <NavigationLink href="/volunteer">Volunteer</NavigationLink>
         <NavigationLink href="/contact">Contact</NavigationLink>
-        {isRegistrationOpen() && <NavigationLink href="/registration" bold>Register</NavigationLink>}
+        <NavigationLink href="/registration" bold>Register</NavigationLink>
     </ul>
 </nav>

@@ -9,6 +9,7 @@ export const EVENT = {
     timeLabel: '6:00pm – 11:00pm',
     locationName: 'CrossLife Community Church',
     locationAddress: '1410 Old Brook Rd, Charlottesville, VA',
+    registrationUrl: 'https://app.greatpumpkinchase.com/register',
     registrationCloseLabel: 'Friday, October 17th at midnight',
     registration: {
         openDate: '2025-09-02',
