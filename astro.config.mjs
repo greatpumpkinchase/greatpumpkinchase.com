@@ -1,5 +1,5 @@
 import { defineConfig } from 'astro/config';
-import tailwind from "@astrojs/tailwind";
+import tailwindcss from "@tailwindcss/vite";
 import sitemap from "@astrojs/sitemap";
 import alpinejs from "@astrojs/alpinejs";
 import netlify from '@astrojs/netlify';
@@ -12,16 +12,12 @@ export default defineConfig({
     output: 'server',
     adapter: netlify(),
     vite: {
+        plugins: [tailwindcss()],
         server: {
             allowedHosts: ["gpc-website.exe.xyz"]
         }
     },
     integrations: [
-        tailwind({
-            config: {
-                applyBaseStyles: false
-            }
-        }),
         sitemap(),
         alpinejs(),
         vue()

@@ -1,7 +1,62 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import 'tailwindcss';
+
+@plugin "@tailwindcss/forms";
+@plugin "@tailwindcss/typography";
+
+@theme {
+    --font-family-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+
+    --color-beige: #FFF4E6;
+
+    --color-orange-900: #803313;
+    --color-orange-800: #A44511;
+    --color-orange-700: #C2550C;
+    --color-orange-600: #EA6D0C;
+    --color-orange-500: #F27D0F;
+    --color-orange-400: #F89A3B;
+    --color-orange-300: #FBBB73;
+    --color-orange-200: #FFDAA9;
+    --color-orange-100: #FFEDD5;
+    --color-orange-75: #FFF4E6;
+    --color-orange-50: #FFF7ED;
+
+    --color-blue-950: #0A2F46;
+    --color-blue-900: #0B4466;
+    --color-blue-800: #0A5881;
+    --color-blue-700: #0A6A9A;
+    --color-blue-600: #0B84BE;
+    --color-blue-500: #18A4DF;
+    --color-blue-400: #41BDEF;
+    --color-blue-300: #83D3F6;
+    --color-blue-200: #BDE6FA;
+    --color-blue-100: #E1F4FD;
+    --color-blue-50: #F1F9FE;
+
+    --color-yellow-950: #3C1F08;
+    --color-yellow-900: #5F330B;
+    --color-yellow-800: #7F4A0E;
+    --color-yellow-700: #9E6208;
+    --color-yellow-600: #C88806;
+    --color-yellow-500: #E8AE0A;
+    --color-yellow-400: #F8C81B;
+    --color-yellow-300: #FBDC49;
+    --color-yellow-200: #FDED8B;
+    --color-yellow-100: #FDF8C4;
+    --color-yellow-50: #FEFCE8;
+
+    --color-gray-950: #03060B;
+    --color-gray-900: #0B111B;
+    --color-gray-800: #171E2B;
+    --color-gray-700: #293445;
+    --color-gray-600: #3D485C;
+    --color-gray-500: #606D83;
+    --color-gray-400: #8692A8;
+    --color-gray-300: #B5C1D5;
+    --color-gray-200: #D0D9E7;
+    --color-gray-100: #E8EDF5;
+    --color-gray-50: #F9F9FA;
+}
 
 [x-cloak] {
     display: none !important;
@@ -20,10 +75,10 @@
     }
 
     .btn {
-        @apply inline-block px-8 py-3 rounded-full bg-orange-500 text-white text-xl font-bold hover:bg-orange-600 transition-colors duration-200 focus:outline-none focus:ring-4 focus:ring-orange-200 text-white;
+        @apply inline-block px-8 py-3 rounded-full bg-orange-500 text-white text-xl font-bold hover:bg-orange-600 transition-colors duration-200 focus:outline-none focus:ring-4 focus:ring-orange-200;
     }
 
     .btn-lg {
-        @apply inline-block px-10 py-5 rounded-full bg-orange-500 text-white text-2xl font-bold hover:bg-orange-600 transition-colors duration-200 focus:outline-none focus:ring-4 focus:ring-orange-200 text-white;
+        @apply inline-block px-10 py-5 rounded-full bg-orange-500 text-white text-2xl font-bold hover:bg-orange-600 transition-colors duration-200 focus:outline-none focus:ring-4 focus:ring-orange-200;
     }
 }
