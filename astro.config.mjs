@@ -10,7 +10,9 @@ import vue from "@astrojs/vue";
 export default defineConfig({
     site: "https://greatpumpkinchase.com",
     output: 'server',
-    adapter: netlify(),
+    adapter: netlify({
+        imageCDN: false,
+    }),
     vite: {
         plugins: [tailwindcss()],
         server: {
