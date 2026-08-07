@@ -3,6 +3,9 @@ dist/
 # generated types
 .astro/
 
+# wrangler local state
+.wrangler/
+
 # dependencies
 node_modules/
 
@@ -19,9 +22,6 @@ pnpm-debug.log*
 
 # macOS-specific files
 .DS_Store
-
-# Local Netlify folder
-.netlify
 
 # yarn
 .yarn
