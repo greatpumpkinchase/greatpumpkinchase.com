@@ -4,9 +4,10 @@ import CanonicalUrl from '../components/utilities/CanonicalUrl.astro';
 import { EVENT } from '../config/event.js';
 ---
 
-<Base title="Parent Info">
+<Base title="Parent Info | The Great Pumpkin Chase">
     <CanonicalUrl slot="head" page="parents" />
-    <section class="container mx-auto py-10 px prose marker:text-gray-500">
+    <main class="page-main">
+        <article class="prose-page">
         <h1>Parent Info</h1>
 
         <p>
@@ -74,5 +75,6 @@ import { EVENT } from '../config/event.js';
                 touch with parents.
             </li>
         </ul>
-    </section>
+        </article>
+    </main>
 </Base>
