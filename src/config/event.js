@@ -1,5 +1,5 @@
 export const EVENT = {
-    name: 'The Great Pumpkin Chase',
+    name: 'Great Pumpkin Chase',
     year: 2025,
     timezone: 'America/New_York',
     dateLabel: 'Saturday, October 25, 2025',
