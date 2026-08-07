@@ -12,6 +12,9 @@ export const EVENT = {
     registrationUrl: 'https://app.greatpumpkinchase.com/register',
     registrationCloseLabel: 'Friday, October 17th at midnight',
     registration: {
+        // Local-only preview: set to 'open', 'upcoming', or 'closed' while using `yarn dev`.
+        // Leave as null to use the dates below. This is never applied to production builds.
+        localPreviewStatus: 'open',
         openDate: '2025-09-02',
         closeDate: '2025-10-18',
     },
