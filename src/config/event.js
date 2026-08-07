@@ -18,8 +18,4 @@ export const EVENT = {
         openDate: '2026-09-02',
         closeDate: '2026-10-18',
     },
-    emergencyContactWindow: {
-        start: '2025-10-25 12:00',
-        end: '2025-10-25 23:59',
-    },
 };
