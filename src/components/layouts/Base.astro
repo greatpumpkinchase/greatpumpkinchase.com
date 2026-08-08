@@ -25,8 +25,14 @@ const { title = 'The Great Pumpkin Chase', navigation, footer } = Astro.props;
         <slot />
         {footer !== false && <Footer />}
         <script is:inline>
+            const hero = document.querySelector('[data-hero]');
+            const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
             const updateHeader = () => {
                 document.querySelector('.site-header')?.classList.toggle('is-scrolled', window.scrollY > 12);
+                if (hero && !reduceMotion) {
+                    const offset = Math.max(-35, Math.min(110, -hero.getBoundingClientRect().top * .18));
+                    hero.style.setProperty('--hero-parallax', `${offset}px`);
+                }
             };
             const revealItems = document.querySelectorAll('[data-reveal]');
             if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
