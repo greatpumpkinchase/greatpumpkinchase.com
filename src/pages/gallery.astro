@@ -1,0 +1,58 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../components/layouts/Base.astro';
+import image01 from '../assets/images/image-01.jpg';
+
+const videos = [
+  {
+    id: '1216535329',
+    title: '2025',
+    description: 'A look at the latest Great Pumpkin Chase adventure.'
+  },
+  {
+    id: '878885644',
+    title: '2023',
+    description: 'More clues, challenges, and memories from a past chase.'
+  }
+];
+---
+<Base title="Previous Years | The Great Pumpkin Chase">
+  <main class="page-shell">
+    <section class="page-hero gallery-hero">
+      <div class="container">
+        <p class="gallery-kicker">Memories from the chase</p>
+        <h1>Previous Years</h1>
+        <p>Watch the highlight reels and take a look at photos from previous years.</p>
+      </div>
+    </section>
+
+    <section class="page-main">
+      <div class="container">
+        <div class="gallery-heading" data-reveal>
+          <p class="gallery-kicker">Watch</p>
+          <h2 class="section-title">Highlight reels</h2>
+        </div>
+        <div class="video-gallery">
+          {videos.map((video) => (
+            <article class="gallery-video" data-reveal>
+              <div class="video-frame"><iframe src={`https://player.vimeo.com/video/${video.id}`} title={video.title} allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+              <h3>{video.title}</h3>
+              <p>{video.description}</p>
+            </article>
+          ))}
+        </div>
+
+        <div class="gallery-heading photo-gallery-heading" data-reveal>
+          <p class="gallery-kicker">Photos</p>
+          <h2 class="section-title">Moments from the night</h2>
+        </div>
+        <div class="photo-gallery">
+          <figure class="gallery-photo" data-reveal>
+            <Image src={image01} alt="Friends enjoying the Great Pumpkin Chase at night" />
+            <figcaption>Teams gather at CrossLife before heading out to solve the night’s riddles and mysteries.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+  </main>
+</Base>
