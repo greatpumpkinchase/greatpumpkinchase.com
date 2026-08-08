@@ -3,12 +3,52 @@ import { Image } from 'astro:assets';
 import NavigationLink from './NavigationLink.astro';
 import logo from '../assets/gpc-logo.png';
 ---
-<nav class="site-nav" aria-label="Main navigation">
+<nav class="site-nav" aria-label="Main navigation" x-data="{ open: false }" x-effect="document.body.classList.toggle('menu-is-open', open)" @keydown.escape.window="open = false">
     <a class="brand" href="/" aria-label="The Great Pumpkin Chase home"><Image src={logo} alt="The Great Pumpkin Chase" /></a>
-    <ul class="nav-links">
+
+    <ul class="nav-links nav-links-desktop">
         <NavigationLink href="/parents">Parent Info</NavigationLink>
         <NavigationLink href="/volunteer">Volunteer</NavigationLink>
         <NavigationLink href="/contact">Contact</NavigationLink>
         <NavigationLink href="/register" bold>Register</NavigationLink>
     </ul>
+
+    <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-controls="mobile-navigation"
+        :aria-expanded="open"
+        @click="open = !open"
+    >
+        <span class="menu-toggle-icon" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="menu-toggle-label">Menu</span>
+    </button>
+
+    <div class="mobile-menu" x-cloak x-show="open" x-transition.opacity.duration.250ms>
+        <button class="mobile-menu-backdrop" type="button" aria-label="Close navigation menu" @click="open = false"></button>
+        <aside
+            id="mobile-navigation"
+            class="mobile-menu-panel"
+            aria-label="Mobile navigation"
+            x-show="open"
+            x-transition:enter="mobile-menu-enter"
+            x-transition:enter-start="mobile-menu-enter-start"
+            x-transition:enter-end="mobile-menu-enter-end"
+            x-transition:leave="mobile-menu-leave"
+            x-transition:leave-start="mobile-menu-leave-start"
+            x-transition:leave-end="mobile-menu-leave-end"
+        >
+            <div class="mobile-menu-heading">
+                <span>Navigate</span>
+                <button class="mobile-menu-close" type="button" aria-label="Close navigation menu" @click="open = false">×</button>
+            </div>
+            <ul class="nav-links nav-links-mobile" @click="open = false">
+                <NavigationLink href="/parents">Parent Info</NavigationLink>
+                <NavigationLink href="/volunteer">Volunteer</NavigationLink>
+                <NavigationLink href="/contact">Contact</NavigationLink>
+                <NavigationLink href="/register" bold>Register</NavigationLink>
+            </ul>
+        </aside>
+    </div>
 </nav>
