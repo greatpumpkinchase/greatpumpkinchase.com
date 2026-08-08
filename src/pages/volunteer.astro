@@ -18,5 +18,12 @@ const teams = [
     <main>
         <section class="page-hero"><div class="container"><p class="eyebrow">Make the magic happen</p><h1>Join the volunteer crew.</h1><p>Your time and care make a safe, joy-filled night of riddles, clues, and challenges possible for every student.</p></div></section>
         <section class="page-main"><div class="container"><div class="volunteer-intro"><p class="eyebrow">There’s a place for you</p><h2 class="section-title">Many hands. One memorable night.</h2><p class="section-copy" style="margin-inline:auto">Whether you’re behind the scenes or right in the middle of the action, your help is an important part of the Great Pumpkin Chase.</p><p style="margin-top:28px"><a href="/volunteer/register" class="btn btn-arrow">Volunteer sign up</a></p></div><div class="serve-grid">{teams.map(([title, copy]) => <article class="serve-card"><h3>{title}</h3><p>{copy}</p></article>)}</div><div class="help-box"><p><strong>Not sure where you’d fit best?</strong><br />We’d love to talk it through. Reach out through our <a class="text-link" href="/contact">contact form</a>.</p></div></div></section>
+        <section class="cta">
+            <div class="container" data-reveal>
+                <h2 class="section-title">Ready to make a difference?</h2>
+                <p>Join the crew and help create a safe, joy-filled night of adventure that students will remember.</p>
+                <a href="/volunteer/register" class="btn btn-arrow">Volunteer sign up</a>
+            </div>
+        </section>
     </main>
 </Base>
