@@ -36,7 +36,7 @@ h1,h2 { font-family:'Bree Serif',Georgia,serif; letter-spacing:-.04em; }
 .btn-arrow::after { content:'→'; font-size:1.2em; line-height:1; }
 
 .hero { position:relative; isolation:isolate; color:#fff; min-height:680px; display:flex; align-items:center; overflow:hidden; }
-.hero-image { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:-3; transform:scale(1.18) translateY(var(--hero-parallax,0px)); will-change:transform; }
+.hero-image { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:-3; transform:scale(1.18) translateY(var(--hero-parallax,0px)); will-change:transform; pointer-events:none; user-select:none; -webkit-user-select:none; -webkit-user-drag:none; }
 .hero::before { content:''; position:absolute; inset:0; z-index:-2; background:linear-gradient(90deg,rgba(10,35,28,.94) 0%,rgba(15,50,39,.78) 43%,rgba(15,50,39,.2) 100%); transform:scale(1.18) translateY(var(--hero-parallax,0px)); will-change:transform; }
 .hero-content { width:min(1160px,calc(100% - 40px)); margin:auto; padding:105px 0 130px; max-width:1160px; }
 .hero-content > div { max-width:710px; }
