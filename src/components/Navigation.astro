@@ -3,7 +3,7 @@ import { Image } from 'astro:assets';
 import NavigationLink from './NavigationLink.astro';
 import logo from '../assets/gpc-logo.png';
 ---
-<nav class="site-nav" aria-label="Main navigation" x-data="{ open: false }" x-effect="document.body.classList.toggle('menu-is-open', open)" @keydown.escape.window="open = false">
+<nav class="site-nav" aria-label="Main navigation" x-data="{ open: false, menuTop: 0 }" x-effect="document.body.classList.toggle('menu-is-open', open)" @keydown.escape.window="open = false">
     <a class="brand" href="/" aria-label="The Great Pumpkin Chase home"><Image src={logo} alt="The Great Pumpkin Chase" /></a>
 
     <ul class="nav-links nav-links-desktop">
@@ -19,13 +19,14 @@ import logo from '../assets/gpc-logo.png';
         aria-label="Open navigation menu"
         aria-controls="mobile-navigation"
         :aria-expanded="open"
-        @click="open = !open"
+        @click="menuTop = window.scrollY; open = !open"
     >
         <span class="menu-toggle-icon" aria-hidden="true"><i></i><i></i><i></i></span>
         <span class="menu-toggle-label">Menu</span>
     </button>
 
-    <div class="mobile-menu" x-cloak x-show="open" x-transition.opacity.duration.250ms>
+    <template x-teleport="body">
+        <div class="mobile-menu" x-cloak x-show="open" x-transition.opacity.duration.250ms :style="'top: ' + menuTop + 'px'">
         <button class="mobile-menu-backdrop" type="button" aria-label="Close navigation menu" @click="open = false"></button>
         <aside
             id="mobile-navigation"
@@ -48,5 +49,6 @@ import logo from '../assets/gpc-logo.png';
                 <NavigationLink href="/register" bold>Register</NavigationLink>
             </ul>
         </aside>
-    </div>
+        </div>
+    </template>
 </nav>
