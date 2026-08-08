@@ -26,7 +26,7 @@ a { color:inherit; }
 .eyebrow { display:none; }
 h1,h2,h3 { line-height:1.05; margin-top:0; }
 h1,h2 { font-family:'Bree Serif',Georgia,serif; letter-spacing:-.04em; }
-.display-title { font-size:clamp(3.2rem,7vw,6.5rem); font-weight:800; }
+.display-title { font-size:clamp(3rem,4.8vw,4.75rem); font-weight:800; }
 .section-title { font-size:clamp(2.35rem,4.2vw,4rem); font-weight:700; margin-bottom:28px; }
 .section-copy { max-width:620px; color:#536159; font-size:1.12rem; line-height:1.7; }
 .btn { display:inline-flex; align-items:center; justify-content:center; gap:9px; border:0; cursor:pointer; border-radius:999px; padding:13px 22px; background:var(--orange); color:#fff; text-decoration:none; font-size:1rem; font-weight:800; box-shadow:0 5px 0 #a93c13; transition:transform .18s,box-shadow .18s,background .18s; }
