@@ -39,10 +39,7 @@ import logo from '../assets/gpc-logo.png';
             x-transition:leave-start="mobile-menu-leave-start"
             x-transition:leave-end="mobile-menu-leave-end"
         >
-            <div class="mobile-menu-heading">
-                <span>Navigate</span>
-                <button class="mobile-menu-close" type="button" aria-label="Close navigation menu" @click="open = false">×</button>
-            </div>
+            <button class="mobile-menu-close" type="button" aria-label="Close navigation menu" @click="open = false">×</button>
             <ul class="nav-links nav-links-mobile" @click="open = false">
                 <NavigationLink href="/">Home</NavigationLink>
                 <NavigationLink href="/parents">Parent Info</NavigationLink>
