@@ -21,15 +21,11 @@ const { title = 'The Great Pumpkin Chase', navigation, footer } = Astro.props;
         {import.meta.env.PROD && <Analytics />}
     </head>
     <body>
-        <div class="scroll-progress" aria-hidden="true"></div>
         {navigation !== false && <header class="site-header"><Navigation /></header>}
         <slot />
         {footer !== false && <Footer />}
         <script is:inline>
-            const progress = document.querySelector('.scroll-progress');
-            const updateProgress = () => {
-                const scrollable = document.documentElement.scrollHeight - window.innerHeight;
-                progress?.style.setProperty('--progress', `${scrollable > 0 ? window.scrollY / scrollable : 0}`);
+            const updateHeader = () => {
                 document.querySelector('.site-header')?.classList.toggle('is-scrolled', window.scrollY > 12);
             };
             const revealItems = document.querySelectorAll('[data-reveal]');
@@ -39,8 +35,8 @@ const { title = 'The Great Pumpkin Chase', navigation, footer } = Astro.props;
                 }), { threshold: .12 });
                 revealItems.forEach((item) => observer.observe(item));
             } else revealItems.forEach((item) => item.classList.add('is-visible'));
-            updateProgress();
-            window.addEventListener('scroll', updateProgress, { passive: true });
+            updateHeader();
+            window.addEventListener('scroll', updateHeader, { passive: true });
         </script>
     </body>
 </html>
