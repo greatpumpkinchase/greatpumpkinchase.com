@@ -1,12 +1,14 @@
 ---
-import FooterLink from './FooterLink.astro';
+import { Image } from 'astro:assets';
+import logo from '../assets/gpc-logotype-white.svg';
 ---
-
-<footer class="mt-5 py-10">
-    <div class="container mx-auto px space-y-8">
-        <ul class="flex flex-wrap justify-center gap-10">
-            <FooterLink href="/">Home</FooterLink>
-            <FooterLink href="/volunteer">Volunteer</FooterLink>
+<footer class="site-footer">
+    <div class="footer-inner">
+        <a class="footer-brand" href="/" aria-label="Great Pumpkin Chase home"><Image src={logo} alt="Great Pumpkin Chase" /></a>
+        <ul class="footer-links">
+            <li><a href="/parents">Parent Info</a></li>
+            <li><a href="/volunteer">Volunteer</a></li>
+            <li><a href="/contact">Contact</a></li>
         </ul>
     </div>
 </footer>

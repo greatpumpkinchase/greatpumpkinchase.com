@@ -1,11 +1,8 @@
 ---
 import Base from './Base.astro';
 ---
-
-<Base>
-    <section
-        class="container mx-auto py-10 px prose marker:text-gray-500"
-    >
-        <slot />
-    </section>
+<Base title="Parent Info | The Great Pumpkin Chase">
+    <main class="page-main">
+        <article class="prose-page"><slot /></article>
+    </main>
 </Base>

@@ -1,0 +1,35 @@
+---
+import moment from 'moment-timezone';
+import Base from '../components/layouts/Base.astro';
+import { EVENT } from '../config/event.js';
+import { getRegistrationStatus } from '../js/isRegistrationOpen.js';
+
+const registrationStatus = getRegistrationStatus();
+const opensOn = moment.tz(EVENT.registration.openDate, EVENT.timezone).format('MMMM D, YYYY');
+---
+<Base title="Register | The Great Pumpkin Chase">
+    <main class="registration"><div class="container">
+        {registrationStatus === 'open' ? (
+            <div class="closed-card registration-status-card">
+                <p class="eyebrow">Registration is open</p>
+                <h1>Let’s get your team ready.</h1>
+                <p>Complete your registration on our registration site, then gather your crew for the Great Pumpkin Chase on {EVENT.dateLabel}.</p>
+                <a href={EVENT.registrationUrl} class="btn btn-arrow" style="margin-top:20px">Register now</a>
+                <p class="registration-help">You’ll continue to app.greatpumpkinchase.com to complete your registration.</p>
+            </div>
+        ) : registrationStatus === 'upcoming' ? (
+            <div class="closed-card registration-status-card">
+                <p class="eyebrow">Save the date</p>
+                <h1>Registration opens soon.</h1>
+                <p>Online registration opens {opensOn}. Check back here then to register your student for the Great Pumpkin Chase.</p>
+                <a href="/parents" class="text-link">Read parent information</a>
+            </div>
+        ) : (
+            <div class="closed-card registration-status-card">
+                <h1>Registration is closed.</h1>
+                <p>Thanks for your interest in the Great Pumpkin Chase. Please check back later for updates about our next adventure.</p>
+                <a href="/parents" class="text-link">Read parent information</a>
+            </div>
+        )}
+    </div></main>
+</Base>
