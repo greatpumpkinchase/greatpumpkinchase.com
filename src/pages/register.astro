@@ -5,7 +5,8 @@ import { EVENT } from '../config/event.js';
 import { getRegistrationStatus } from '../js/isRegistrationOpen.js';
 
 const registrationStatus = getRegistrationStatus();
-const opensOn = moment.tz(EVENT.registration.openDate, EVENT.timezone).format('MMMM D, YYYY');
+const opensAt = moment.tz(EVENT.registration.openDate, EVENT.timezone);
+const opensOn = opensAt.format('MMMM D, YYYY');
 ---
 <Base title="Register | The Great Pumpkin Chase">
     <main class="registration"><div class="container">
@@ -22,7 +23,50 @@ const opensOn = moment.tz(EVENT.registration.openDate, EVENT.timezone).format('M
                 <p class="eyebrow">Save the date</p>
                 <h1>Registration opens soon.</h1>
                 <p>Online registration opens {opensOn}. Check back here then to register your student for the Great Pumpkin Chase.</p>
+                <div class="registration-countdown" data-registration-countdown={opensAt.toISOString()} aria-live="polite">
+                    <p class="countdown-label">Registration opens in</p>
+                    <div class="countdown-units" aria-label={`Countdown until registration opens on ${opensOn}`}>
+                        <div class="countdown-unit"><strong data-countdown-days>--</strong><span>Days</span></div>
+                        <div class="countdown-unit"><strong data-countdown-hours>--</strong><span>Hours</span></div>
+                        <div class="countdown-unit"><strong data-countdown-minutes>--</strong><span>Minutes</span></div>
+                        <div class="countdown-unit"><strong data-countdown-seconds>--</strong><span>Seconds</span></div>
+                    </div>
+                </div>
                 <a href="/parents" class="text-link">Read parent information</a>
+                <script is:inline>
+                    document.querySelectorAll('[data-registration-countdown]').forEach((countdown) => {
+                        const target = new Date(countdown.dataset.registrationCountdown).getTime();
+                        const values = {
+                            days: countdown.querySelector('[data-countdown-days]'),
+                            hours: countdown.querySelector('[data-countdown-hours]'),
+                            minutes: countdown.querySelector('[data-countdown-minutes]'),
+                            seconds: countdown.querySelector('[data-countdown-seconds]'),
+                        };
+                        const pad = (value) => String(value).padStart(2, '0');
+                        const update = () => {
+                            const remaining = Math.max(0, target - Date.now());
+                            const totalSeconds = Math.floor(remaining / 1000);
+                            const days = Math.floor(totalSeconds / 86400);
+                            const hours = Math.floor((totalSeconds % 86400) / 3600);
+                            const minutes = Math.floor((totalSeconds % 3600) / 60);
+                            const seconds = totalSeconds % 60;
+                            values.days.textContent = days;
+                            values.hours.textContent = pad(hours);
+                            values.minutes.textContent = pad(minutes);
+                            values.seconds.textContent = pad(seconds);
+                            if (!remaining) {
+                                countdown.querySelector('.countdown-label').textContent = 'Registration is opening now';
+                                return false;
+                            }
+                            return true;
+                        };
+                        if (update()) {
+                            const timer = window.setInterval(() => {
+                                if (!update()) window.clearInterval(timer);
+                            }, 1000);
+                        }
+                    });
+                </script>
             </div>
         ) : (
             <div class="closed-card registration-status-card">
