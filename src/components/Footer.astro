@@ -1,10 +1,9 @@
 ---
-import { Image } from 'astro:assets';
 import logo from '../assets/gpc-logotype-white.svg';
 ---
 <footer class="site-footer">
     <div class="footer-inner">
-        <a class="footer-brand" href="/" aria-label="Great Pumpkin Chase home"><Image src={logo} alt="Great Pumpkin Chase" /></a>
+        <a class="footer-brand" href="/" aria-label="Great Pumpkin Chase home"><img src={logo.src} width={logo.width} height={logo.height} alt="Great Pumpkin Chase" /></a>
         <ul class="footer-links">
             <li><a href="/gallery">Previous Years</a></li>
             <li><a href="/parents">Parent Info</a></li>
