@@ -2,8 +2,8 @@ export const EVENT = {
     name: 'Great Pumpkin Chase',
     year: 2026,
     timezone: 'America/New_York',
-    dateLabel: 'Saturday, October 24, 2026',
-    backupDateLabel: 'November 7, 2026',
+    dateLabel: 'Friday, October 23rd, 2026',
+    backupDateLabel: 'Not yet determined',
     startTimeLabel: '6:00pm',
     endTimeLabel: '11:00pm',
     timeLabel: '6:00pm – 11:00pm',
@@ -15,7 +15,7 @@ export const EVENT = {
         // Local-only preview: set to 'open', 'upcoming', or 'closed' while using `yarn dev`.
         // Leave as null to use the dates below. This is never applied to production builds.
         localPreviewStatus: null,
-        openDate: '2026-09-01',
+        openDate: '2026-09-15',
         closeDate: '2026-10-18',
     },
 };
