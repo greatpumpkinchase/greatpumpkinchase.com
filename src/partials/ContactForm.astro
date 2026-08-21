@@ -1,8 +1,125 @@
-<form method="POST" netlify>
-    <div class="form-grid">
-        <div class="field"><label for="name">Name</label><input type="text" name="name" id="name" autocomplete="name" required /></div>
-        <div class="field"><label for="email">Email address</label><input type="email" name="email" id="email" autocomplete="email" required /></div>
-        <div class="field field-full"><label for="message">How can we help?</label><textarea name="message" id="message" rows="8" required></textarea></div>
+---
+const endpoint = 'https://app.greatpumpkinchase.com/api/contact';
+---
+<div class="form-card" x-data="contactForm" data-endpoint={endpoint}>
+    <div class="form-success" x-show="sent" x-cloak x-ref="success" tabindex="-1" role="status">
+        <p class="eyebrow">Message sent</p>
+        <h2>Thanks for reaching out.</h2>
+        <p x-text="successMessage"></p>
+        <p><button class="btn btn-light" type="button" @click="reset()">Send another message</button></p>
     </div>
-    <button class="btn btn-arrow" style="margin-top:25px" type="submit">Send message</button>
-</form>
+
+    <form method="post" x-show="!sent" @submit.prevent="submit()">
+        <p class="form-alert" role="alert" x-show="formError" x-cloak x-text="formError"></p>
+
+        <div class="form-grid">
+            <div class="field">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" maxlength="255" autocomplete="name" required
+                       x-model="form.name"
+                       :aria-invalid="errorFor('name') ? 'true' : null"
+                       :aria-describedby="errorFor('name') ? 'name-error' : null" />
+                <p class="field-error" id="name-error" x-show="errorFor('name')" x-cloak x-text="errorFor('name')"></p>
+            </div>
+
+            <div class="field">
+                <label for="email">Email address</label>
+                <input type="email" name="email" id="email" maxlength="255" autocomplete="email" required
+                       x-model="form.email"
+                       :aria-invalid="errorFor('email') ? 'true' : null"
+                       :aria-describedby="errorFor('email') ? 'email-error' : null" />
+                <p class="field-error" id="email-error" x-show="errorFor('email')" x-cloak x-text="errorFor('email')"></p>
+            </div>
+
+            <div class="field field-full">
+                <label for="phone">Phone number <span class="field-optional">(optional)</span></label>
+                <input type="tel" name="phone" id="phone" maxlength="50" autocomplete="tel"
+                       x-model="form.phone"
+                       :aria-invalid="errorFor('phone') ? 'true' : null"
+                       :aria-describedby="errorFor('phone') ? 'phone-error' : null" />
+                <p class="field-error" id="phone-error" x-show="errorFor('phone')" x-cloak x-text="errorFor('phone')"></p>
+            </div>
+
+            <div class="field field-full">
+                <label for="message">How can we help?</label>
+                <textarea name="message" id="message" rows="8" minlength="10" maxlength="5000" required
+                          x-model="form.message"
+                          :aria-invalid="errorFor('message') ? 'true' : null"
+                          :aria-describedby="errorFor('message') ? 'message-error' : null"></textarea>
+                <p class="field-error" id="message-error" x-show="errorFor('message')" x-cloak x-text="errorFor('message')"></p>
+            </div>
+        </div>
+
+        <div aria-hidden="true" style="position:absolute; left:-9999px;">
+            <label>Website<input type="text" name="website" tabindex="-1" autocomplete="off" x-model="form.website" /></label>
+        </div>
+
+        <button class="btn btn-arrow" style="margin-top:25px" type="submit" :disabled="sending">
+            <span x-text="sending ? 'Sending…' : 'Send message'">Send message</span>
+        </button>
+
+        <noscript><p class="form-note">This form needs JavaScript to send your message. Please turn it on and reload the page.</p></noscript>
+    </form>
+</div>
+
+<script>
+    document.addEventListener('alpine:init', () => {
+        window.Alpine.data('contactForm', () => ({
+            sending: false,
+            sent: false,
+            successMessage: '',
+            formError: '',
+            errors: {},
+            form: { name: '', email: '', phone: '', message: '', website: '' },
+
+            errorFor(field) {
+                const messages = this.errors[field];
+                return Array.isArray(messages) ? messages[0] : messages || '';
+            },
+
+            reset() {
+                this.sent = false;
+                this.successMessage = '';
+                this.formError = '';
+                this.errors = {};
+                this.form = { name: '', email: '', phone: '', message: '', website: '' };
+            },
+
+            async submit() {
+                if (this.sending) return;
+
+                this.sending = true;
+                this.formError = '';
+                this.errors = {};
+
+                try {
+                    const response = await fetch(this.$root.dataset.endpoint, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+                        body: JSON.stringify(this.form),
+                    });
+
+                    const body = await response.json().catch(() => ({}));
+
+                    if (response.ok) {
+                        this.successMessage = body.message || 'Thanks for reaching out. We will get back to you soon.';
+                        this.sent = true;
+                        this.$nextTick(() => this.$refs.success.focus());
+                    } else if (response.status === 422) {
+                        this.errors = body.errors || {};
+                        this.formError = body.message || 'Please check the highlighted fields and try again.';
+                        this.$nextTick(() => this.$root.querySelector('[aria-invalid="true"]')?.focus());
+                    } else if (response.status === 429) {
+                        this.formError = 'That’s a lot of messages in a short time. Please wait a minute and try again.';
+                    } else {
+                        this.formError = 'Something went wrong on our end and your message wasn’t sent. Please try again in a few minutes.';
+                    }
+                } catch (error) {
+                    this.formError = 'We couldn’t reach our server. Please check your connection and try again.';
+                } finally {
+                    this.sending = false;
+                }
+            },
+        }));
+    });
+</script>
