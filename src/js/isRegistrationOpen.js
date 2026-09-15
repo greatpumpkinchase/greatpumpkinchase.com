@@ -1,16 +1,25 @@
 import moment from 'moment-timezone';
 import { EVENT } from '../config/event.js';
 
-export function getRegistrationStatus(now = moment.tz(EVENT.timezone)) {
+// Returns the pinned local preview status, or null when the real dates apply.
+// Vite sets DEV only for `yarn dev`, so this can never affect the deployed site.
+export function getPreviewStatus() {
     const localPreviewStatus = EVENT.registration.localPreviewStatus;
 
-    // Vite sets DEV only for `yarn dev`, so this switch cannot change the deployed site.
     if (
         import.meta.env.DEV &&
         ['open', 'upcoming', 'closed'].includes(localPreviewStatus)
     ) {
         return localPreviewStatus;
     }
+
+    return null;
+}
+
+export function getRegistrationStatus(now = moment.tz(EVENT.timezone)) {
+    const previewStatus = getPreviewStatus();
+
+    if (previewStatus) return previewStatus;
 
     const opens = moment.tz(EVENT.registration.openDate, EVENT.timezone);
     const closes = moment.tz(EVENT.registration.closeDate, EVENT.timezone);
