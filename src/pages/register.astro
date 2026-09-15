@@ -1,16 +1,15 @@
 ---
-import moment from 'moment-timezone';
 import Base from '../components/layouts/Base.astro';
 import { EVENT } from '../config/event.js';
-import { getPreviewStatus, getRegistrationStatus } from '../js/isRegistrationOpen.js';
+import { getClosesAt, getOpensAt, getPreviewStatus, getRegistrationStatus } from '../js/isRegistrationOpen.js';
 
 // The page is statically built, so this status is only the initial paint and the
 // no-JS fallback. The inline script below re-decides on every page load from the
 // visitor's clock, which is what lets open/close happen without a redeploy.
 const previewStatus = getPreviewStatus();
 const registrationStatus = getRegistrationStatus();
-const opensAt = moment.tz(EVENT.registration.openDate, EVENT.timezone);
-const closesAt = moment.tz(EVENT.registration.closeDate, EVENT.timezone);
+const opensAt = getOpensAt();
+const closesAt = getClosesAt();
 const opensOn = opensAt.format('MMMM D, YYYY');
 ---
 <Base title="Register | The Great Pumpkin Chase">

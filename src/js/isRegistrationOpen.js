@@ -16,16 +16,24 @@ export function getPreviewStatus() {
     return null;
 }
 
+// Registration opens at the start of openDate.
+export function getOpensAt() {
+    return moment.tz(EVENT.registration.openDate, EVENT.timezone);
+}
+
+// closeDate is the last day registration is open, so the closing instant is
+// midnight at the end of that day -- i.e. the start of the following day.
+export function getClosesAt() {
+    return moment.tz(EVENT.registration.closeDate, EVENT.timezone).add(1, 'day');
+}
+
 export function getRegistrationStatus(now = moment.tz(EVENT.timezone)) {
     const previewStatus = getPreviewStatus();
 
     if (previewStatus) return previewStatus;
 
-    const opens = moment.tz(EVENT.registration.openDate, EVENT.timezone);
-    const closes = moment.tz(EVENT.registration.closeDate, EVENT.timezone);
-
-    if (now.isBefore(opens)) return 'upcoming';
-    if (now.isSameOrAfter(closes)) return 'closed';
+    if (now.isBefore(getOpensAt())) return 'upcoming';
+    if (now.isSameOrAfter(getClosesAt())) return 'closed';
     return 'open';
 }
 

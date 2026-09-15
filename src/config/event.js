@@ -15,6 +15,8 @@ export const EVENT = {
         // Local-only preview: set to 'open', 'upcoming', or 'closed' while using `yarn dev`.
         // Leave as null to use the dates below. This is never applied to production builds.
         localPreviewStatus: null,
+        // First day registration is open, and the last day it is open. Registration
+        // closes at midnight at the end of closeDate, so that whole day counts.
         openDate: '2026-09-15',
         closeDate: '2026-10-18',
     },
