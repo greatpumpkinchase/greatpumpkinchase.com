@@ -24,7 +24,8 @@ export default defineConfig({
     vite: {
         plugins: [tailwindcss()],
         server: {
-            allowedHosts: ["gpc-website.exe.xyz"]
+            // The dev server in compose.yaml, behind Caddy in ~/infra.
+            allowedHosts: ["gpc-website.exe.xyz", "gpc-website.puremint.xyz"]
         }
     },
     integrations: [
