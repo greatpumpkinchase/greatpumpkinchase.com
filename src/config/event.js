@@ -2,6 +2,9 @@ export const EVENT = {
     name: 'Great Pumpkin Chase',
     year: 2026,
     timezone: 'America/New_York',
+    // The event day. Once it has passed, the home page switches to a
+    // "that's a wrap, come back next year" message.
+    date: '2026-10-23',
     dateLabel: 'Friday, October 23rd, 2026',
     backupDateLabel: 'Not yet determined',
     startTimeLabel: '6:00pm',

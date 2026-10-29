@@ -3,8 +3,17 @@ import { Image } from 'astro:assets';
 import Base from '../components/layouts/Base.astro';
 import image01 from '../assets/images/image-01.jpg';
 import { EVENT } from '../config/event.js';
+import isEventOver from '../js/isEventOver.js';
+
+const eventOver = isEventOver();
 ---
 <Base title="The Great Pumpkin Chase">
+  {eventOver && (
+    <p slot="banner" class="event-over-banner">
+      <span aria-hidden="true">✦</span>
+      <span>The {EVENT.year} Great Pumpkin Chase is over. Thanks for a great year—come back next fall! <a href="/gallery">View the gallery</a></span>
+    </p>
+  )}
   <main class="page-shell">
     <section class="hero" data-hero>
       <Image src={image01} width={1920} alt="Friends enjoying the Great Pumpkin Chase at night" class="hero-image" />
@@ -13,12 +22,25 @@ import { EVENT } from '../config/event.js';
       <div class="fireflies" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
       <div class="hero-content" data-reveal>
         <div>
-          <p class="hero-kicker"><span>✦</span> {EVENT.dateLabel} &nbsp;·&nbsp; {EVENT.timeLabel}</p>
-          <h1 class="display-title">This Fall, Be the Team<br />That Solves the Riddle.</h1>
-          <p class="hero-lead">A city-wide night of riddles, clues, puzzles, challenges, pizza, and unforgettable memories for teens and their friends.</p>
-          <div class="hero-actions">
-            <a href="/register" class="btn btn-arrow">Register now</a>
-          </div>
+          {eventOver ? (
+            <>
+              <p class="hero-kicker"><span>✦</span> Thanks for an amazing {EVENT.year} chase</p>
+              <h1 class="display-title">That’s a Wrap.<br />See You Next Fall!</h1>
+              <p class="hero-lead">The {EVENT.year} Great Pumpkin Chase is over. Thank you to every team, volunteer, and parent who made it unforgettable. Come back next year for another night of riddles, clues, and pizza.</p>
+              <div class="hero-actions">
+                <a href="/gallery" class="btn btn-arrow">View the gallery</a>
+              </div>
+            </>
+          ) : (
+            <>
+              <p class="hero-kicker"><span>✦</span> {EVENT.dateLabel} &nbsp;·&nbsp; {EVENT.timeLabel}</p>
+              <h1 class="display-title">This Fall, Be the Team<br />That Solves the Riddle.</h1>
+              <p class="hero-lead">A city-wide night of riddles, clues, puzzles, challenges, pizza, and unforgettable memories for teens and their friends.</p>
+              <div class="hero-actions">
+                <a href="/register" class="btn btn-arrow">Register now</a>
+              </div>
+            </>
+          )}
         </div>
       </div>
     </section>
@@ -49,7 +71,11 @@ import { EVENT } from '../config/event.js';
     </section>
 
     <section class="cta">
-      <div class="container" data-reveal><h2 class="section-title">Ready to solve?</h2><p>Make a team with your friends, or come ready to meet some new ones. Registration is your first step toward a night of riddles, clues, and unforgettable fun.</p><a href="/register" class="btn btn-arrow">Register now</a></div>
+      {eventOver ? (
+        <div class="container" data-reveal><h2 class="section-title">Come back next year!</h2><p>This year’s chase is in the books. Check back next fall for the date of the next Great Pumpkin Chase and to register your team.</p><a href="/gallery" class="btn btn-arrow">View the gallery</a></div>
+      ) : (
+        <div class="container" data-reveal><h2 class="section-title">Ready to solve?</h2><p>Make a team with your friends, or come ready to meet some new ones. Registration is your first step toward a night of riddles, clues, and unforgettable fun.</p><a href="/register" class="btn btn-arrow">Register now</a></div>
+      )}
     </section>
   </main>
 </Base>

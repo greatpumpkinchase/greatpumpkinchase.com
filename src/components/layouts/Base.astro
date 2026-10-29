@@ -22,7 +22,7 @@ const { title = 'The Great Pumpkin Chase', navigation, footer } = Astro.props;
         {import.meta.env.PROD && <Analytics />}
     </head>
     <body>
-        {navigation !== false && <header class="site-header"><Navigation /></header>}
+        {navigation !== false && <header class="site-header"><slot name="banner" /><Navigation /></header>}
         <slot />
         {footer !== false && <Footer />}
         <script is:inline>
