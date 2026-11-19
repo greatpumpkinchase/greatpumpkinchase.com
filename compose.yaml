@@ -13,8 +13,10 @@ services:
         USER node
         WORKDIR /app
     # yarn, per packageManager: package-lock.json lacks the Linux native bindings.
-    # --force replaces the stale dev-server lock in .astro/ left by a restart.
-    command: sh -c "yarn install --frozen-lockfile && yarn dev --force"
+    # A restart leaves Astro's dev-server lock in .astro/dev.json. PIDs repeat in a fresh container, so
+    # `astro dev --force` found the lock's PID alive, as part of the new server, and sent it SIGTERM: a crash loop.
+    # Nothing else runs a dev server in this container, so the lock is always stale here.
+    command: sh -c "rm -f .astro/dev.json && yarn install --frozen-lockfile && yarn dev"
     environment:
       COREPACK_ENABLE_DOWNLOAD_PROMPT: "0"
     restart: unless-stopped
